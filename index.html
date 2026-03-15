@@ -275,8 +275,12 @@
     .modal-sheet{background:var(--nav-bg);border:1px solid var(--border);border-radius:18px 18px 0 0;padding:22px;width:100%;max-width:480px;display:flex;flex-direction:column;gap:13px;animation:slideUp .22s ease;max-height:90dvh;overflow-y:auto;}
     @keyframes slideUp{from{transform:translateY(30px);opacity:0;}}
     .modal-title{font-size:17px;font-weight:900;}.modal-btns{display:flex;gap:10px;}
-    .empty-state{text-align:center;padding:40px 20px;color:var(--muted);}
-    .empty-ico{font-size:42px;margin-bottom:10px;}
+    .ob-member-btn{width:100%;background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:12px 14px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .15s;font-family:var(--font);color:var(--text);margin-bottom:8px;}
+    .ob-member-btn:hover{border-color:var(--accent);background:var(--card2);}
+    .ob-member-av{font-size:26px;flex-shrink:0;}
+    .ob-member-name{font-size:15px;font-weight:800;flex:1;text-align:left;}
+    .ob-member-pts{font-size:12px;color:var(--gold);font-weight:700;}
+    .ob-member-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
   </style>
 </head>
 <body>
@@ -289,14 +293,30 @@
 
 <!-- ONBOARDING -->
 <div id="onboarding">
-  <div class="ob-icon">🏆</div>
-  <div class="ob-title">Vítej v<br/><span>FitFamily!</span></div>
-  <div class="ob-sub">Zaregistruj se a soutěž každý měsíc o nejlepší výsledky!</div>
-  <div><div class="lbl">Tvoje jméno</div>
-    <input id="ob-name" class="input-field" type="text" placeholder="Např. Táta, Eliška…" maxlength="20"/></div>
-  <div><div class="lbl">Avatar</div><div class="avatar-grid" id="ob-avatars"></div></div>
-  <div><div class="lbl">Barva profilu</div><div class="color-row" id="ob-colors"></div></div>
-  <button class="btn-primary" id="ob-btn" disabled onclick="submitOnboarding()">Jdu do toho! 💪</button>
+  <!-- STEP 1: pick existing or new -->
+  <div id="ob-step1" style="display:flex;flex-direction:column;gap:20px">
+    <div class="ob-icon">🏆</div>
+    <div class="ob-title">Vítej v<br/><span>FitFamily!</span></div>
+    <div class="ob-sub">Jsi už součástí rodiny, nebo se přidáváš nově?</div>
+    <div id="ob-existing-list"></div>
+    <div style="display:flex;align-items:center;gap:10px;margin:4px 0">
+      <div style="flex:1;height:1px;background:var(--border)"></div>
+      <div style="color:var(--muted);font-size:12px;font-weight:700">nebo</div>
+      <div style="flex:1;height:1px;background:var(--border)"></div>
+    </div>
+    <button class="btn-secondary" onclick="showObStep2()">➕ Jsem nový člen</button>
+  </div>
+
+  <!-- STEP 2: create new member -->
+  <div id="ob-step2" style="display:none;flex-direction:column;gap:20px">
+    <button onclick="showObStep1()" style="background:none;border:none;color:var(--muted);font-size:13px;font-weight:700;cursor:pointer;text-align:left;padding:0;font-family:var(--font)">‹ Zpět</button>
+    <div class="ob-title" style="font-size:26px">Nový člen 👋</div>
+    <div><div class="lbl">Tvoje jméno</div>
+      <input id="ob-name" class="input-field" type="text" placeholder="Např. Táta, Eliška…" maxlength="20"/></div>
+    <div><div class="lbl">Avatar</div><div class="avatar-grid" id="ob-avatars"></div></div>
+    <div><div class="lbl">Barva profilu</div><div class="color-row" id="ob-colors"></div></div>
+    <button class="btn-primary" id="ob-btn" disabled onclick="submitOnboarding()">Jdu do toho! 💪</button>
+  </div>
 </div>
 
 <!-- APP -->
@@ -832,10 +852,38 @@ function pickCol(id,c){
 }
 
 // ── ONBOARDING ──────────────────────────────────────────
+function showObStep1(){
+  document.getElementById('ob-step1').style.display='flex';
+  document.getElementById('ob-step2').style.display='none';
+}
+function showObStep2(){
+  document.getElementById('ob-step1').style.display='none';
+  document.getElementById('ob-step2').style.display='flex';
+}
 function initOb(){
+  // Render existing members to pick from
+  const list=document.getElementById('ob-existing-list');
+  if(members.length){
+    list.innerHTML=`<div class="lbl" style="margin-bottom:10px">Kdo jsi?</div>`+
+      members.map(m=>`
+        <button class="ob-member-btn" onclick="pickExistingMember('${m.id}')">
+          <div class="ob-member-av">${m.avatar}</div>
+          <div class="ob-member-dot" style="background:${m.color}"></div>
+          <div class="ob-member-name">${m.name}</div>
+          <div class="ob-member-pts">${Math.round(monthPts(m.id,nowMonth()))}b</div>
+        </button>`).join('');
+  } else {
+    // No members yet — skip straight to create
+    showObStep2();
+  }
   renderGrid('ob-avatars',obAv,av=>{obAv=av;});
   renderColors('ob-colors',obCol,c=>{obCol=c;});
-  document.getElementById('ob-name').oninput=()=>{document.getElementById('ob-btn').disabled=!document.getElementById('ob-name').value.trim();};
+  document.getElementById('ob-name').oninput=()=>{
+    document.getElementById('ob-btn').disabled=!document.getElementById('ob-name').value.trim();
+  };
+}
+function pickExistingMember(id){
+  myId=id;localStorage.setItem('ff_my_id',myId);launchApp();
 }
 async function submitOnboarding(){
   const name=document.getElementById('ob-name').value.trim();if(!name)return;
