@@ -461,7 +461,7 @@ const MONTH_NAMES=['Leden','Únor','Březen','Duben','Květen','Červen','Červe
 let members=[],logs=[];
 let myId=localStorage.getItem('ff_my_id');
 let vals={steps:0,squats:0,bike_km:0,run_km:0,swim_km:0,silovy:0,pilates:0};
-let editDate=today(); // currently viewed/edited date in My Results
+let editDate=''; // set on first use in renderMy
 const nowMonth=()=>new Date().toISOString().slice(0,7);
 let viewMonth=nowMonth();
 let obAv=AVATARS[0],obCol=COLORS[0],newAv=AVATARS[0],newCol=COLORS[0],editAv='',editCol='';
@@ -532,7 +532,7 @@ function showTab(name){
     document.getElementById('tab-'+t).classList.toggle('active',t===name);
   });
   if(name==='board')    renderBoard();
-  if(name==='my')       {editDate=today();renderMy();}
+  if(name==='my')       {editDate='';renderMy();}
   if(name==='archive')  renderArchive();
   if(name==='settings') renderSettings();
 }
@@ -644,8 +644,7 @@ function changeEditDate(delta){
 
 function renderMy(){
   const me=byId(myId);if(!me){showTab('settings');return;}
-  // always reset to today when switching to tab fresh only if editDate somehow drifted future
-  if(editDate>today())editDate=today();
+  if(!editDate||editDate>today())editDate=today();
 
   const dl=dateLog(myId,editDate);
   vals={
