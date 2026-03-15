@@ -357,12 +357,14 @@
         <div class="sec-label">Bodování</div>
         <div class="scoring-grid">
           <div class="scoring-item"><div class="scoring-ico" style="background:#1e2a1e">👟</div><div><div class="scoring-name" style="color:#4ade80">Kroky</div><div class="scoring-rate">0.01 b/krok</div></div></div>
-          <div class="scoring-item"><div class="scoring-ico" style="background:#2a1e1e">💪</div><div><div class="scoring-name" style="color:#f97316">Dřepy / Kliky</div><div class="scoring-rate">2 b/opak.</div></div></div>
+          <div class="scoring-item"><div class="scoring-ico" style="background:#2a1e1e">🦵</div><div><div class="scoring-name" style="color:#f97316">Dřepy</div><div class="scoring-rate">1.5 b/opak.</div></div></div>
+          <div class="scoring-item"><div class="scoring-ico" style="background:#2a1a10">💪</div><div><div class="scoring-name" style="color:#fb923c">Kliky</div><div class="scoring-rate">2 b/opak.</div></div></div>
           <div class="scoring-item"><div class="scoring-ico" style="background:#1e2a2a">🚴</div><div><div class="scoring-name" style="color:#22d3ee">Kolo</div><div class="scoring-rate">10 b/km</div></div></div>
           <div class="scoring-item"><div class="scoring-ico" style="background:#2a221e">🏃</div><div><div class="scoring-name" style="color:#fbbf24">Běh</div><div class="scoring-rate">15 b/km</div></div></div>
           <div class="scoring-item"><div class="scoring-ico" style="background:#0c2030">🏊</div><div><div class="scoring-name" style="color:#38bdf8">Plavání</div><div class="scoring-rate">20 b/km</div></div></div>
           <div class="scoring-item"><div class="scoring-ico" style="background:#1e1030">🏋️</div><div><div class="scoring-name" style="color:#c084fc">Silový trénink</div><div class="scoring-rate">3 b/min</div></div></div>
           <div class="scoring-item"><div class="scoring-ico" style="background:#2a1828">🧘</div><div><div class="scoring-name" style="color:#f9a8d4">Pilates / Barre</div><div class="scoring-rate">2 b/min</div></div></div>
+          <div class="scoring-item"><div class="scoring-ico" style="background:#1a2a08">🥋</div><div><div class="scoring-name" style="color:#a3e635">Aikido</div><div class="scoring-rate">3 b/min</div></div></div>
         </div>
       </div>
     </div>
@@ -468,19 +470,21 @@ const AVATARS=['🦑','🐡','🦊','🐼','🦁','🐯','🐻','🦄','🐸','�
 const COLORS=['#ffd700','#f97316','#4ade80','#22d3ee','#7c6af7','#ec4899','#fbbf24','#60a5fa'];
 const ACTS=[
   {key:'steps',   label:'Kroky',          icon:'👟',pts:.01, step:100, max:50000,isFloat:false,color:'#4ade80',bg:'#1e2a1e'},
-  {key:'squats',  label:'Dřepy / Kliky',  icon:'💪',pts:2,   step:5,   max:500,  isFloat:false,color:'#f97316',bg:'#2a1e1e'},
+  {key:'drepy',   label:'Dřepy',          icon:'🦵',pts:1.5, step:5,   max:500,  isFloat:false,color:'#f97316',bg:'#2a1e1e'},
+  {key:'kliky',   label:'Kliky',          icon:'💪',pts:2,   step:5,   max:500,  isFloat:false,color:'#fb923c',bg:'#2a1a10'},
   {key:'bike_km', label:'Kolo',           icon:'🚴',pts:10,  step:.5,  max:200,  isFloat:true, color:'#22d3ee',bg:'#1e2a2a'},
   {key:'run_km',  label:'Běh',            icon:'🏃',pts:15,  step:.5,  max:100,  isFloat:true, color:'#fbbf24',bg:'#2a221e'},
   {key:'swim_km', label:'Plavání',        icon:'🏊',pts:20,  step:.5,  max:50,   isFloat:true, color:'#38bdf8',bg:'#0c2030'},
   {key:'silovy',  label:'Silový trénink', icon:'🏋️',pts:3,   step:5,   max:180,  isFloat:false,color:'#c084fc',bg:'#1e1030'},
   {key:'pilates', label:'Pilates / Barre',icon:'🧘',pts:2,   step:5,   max:180,  isFloat:false,color:'#f9a8d4',bg:'#2a1828'},
+  {key:'aikido',  label:'Aikido',         icon:'🥋',pts:3,   step:5,   max:180,  isFloat:false,color:'#a3e635',bg:'#1a2a08'},
 ];
 const MONTH_NAMES=['Leden','Únor','Březen','Duben','Květen','Červen','Červenec','Srpen','Září','Říjen','Listopad','Prosinec'];
 
 // ── STATE ───────────────────────────────────────────────
 let members=[],logs=[];
 let myId=localStorage.getItem('ff_my_id');
-let vals={steps:0,squats:0,bike_km:0,run_km:0,swim_km:0,silovy:0,pilates:0};
+let vals={steps:0,drepy:0,kliky:0,bike_km:0,run_km:0,swim_km:0,silovy:0,pilates:0,aikido:0};
 let editDate=''; // set on first use in renderMy
 const nowMonth=()=>new Date().toISOString().slice(0,7);
 let viewMonth=nowMonth();
@@ -501,7 +505,7 @@ const today   =()=>new Date().toISOString().slice(0,10);
 const byId    =id=>members.find(m=>m.id===id);
 const todayLog=id=>logs.find(l=>l.member_id===id&&l.date===today());
 const monthPts=(id,ym)=>logs.filter(l=>l.member_id===id&&l.date.startsWith(ym)).reduce((s,l)=>s+(parseFloat(l.points)||0),0);
-const calcPts =v=>v.steps*.01+v.squats*2+v.bike_km*10+v.run_km*15+v.swim_km*20+(v.silovy||0)*3+(v.pilates||0)*2;
+const calcPts =v=>v.steps*.01+(v.drepy||0)*1.5+(v.kliky||0)*2+v.bike_km*10+v.run_km*15+v.swim_km*20+(v.silovy||0)*3+(v.pilates||0)*2+(v.aikido||0)*3;
 function allMonths(){const s=new Set(logs.map(l=>l.date.slice(0,7)));s.add(nowMonth());return[...s].sort().reverse();}
 function monthWinner(ym){
   if(!members.length)return null;
@@ -620,12 +624,14 @@ function renderBoard(){
     const tl=isCur?todayLog(m.id):null;
     const badges=tl?[
       tl.steps  ?`👟 ${Number(tl.steps).toLocaleString()}`:'',
-      tl.squats ?`💪 ${tl.squats}`:'',
+      tl.drepy  ?`🦵 ${tl.drepy}`:'',
+      tl.kliky  ?`💪 ${tl.kliky}`:'',
       tl.bike_km?`🚴 ${tl.bike_km}`:'',
       tl.run_km ?`🏃 ${tl.run_km}`:'',
       tl.swim_km?`🏊 ${tl.swim_km}`:'',
       tl.silovy ?`🏋️ ${tl.silovy}min`:'',
       tl.pilates?`🧘 ${tl.pilates}min`:'',
+      tl.aikido ?`🥋 ${tl.aikido}min`:'',
     ].filter(Boolean):[];
     return `<div class="member-card${m.id===myId?' me':''}">
       ${m.id===myId?'<div class="me-label">JÁ</div>':''}
@@ -668,9 +674,10 @@ function renderMy(){
 
   const dl=dateLog(myId,editDate);
   vals={
-    steps:dl?.steps||0, squats:dl?.squats||0,
+    steps:dl?.steps||0, drepy:dl?.drepy||0, kliky:dl?.kliky||0,
     bike_km:parseFloat(dl?.bike_km)||0, run_km:parseFloat(dl?.run_km)||0,
-    swim_km:parseFloat(dl?.swim_km)||0, silovy:dl?.silovy||0, pilates:dl?.pilates||0
+    swim_km:parseFloat(dl?.swim_km)||0, silovy:dl?.silovy||0, pilates:dl?.pilates||0,
+    aikido:dl?.aikido||0
   };
 
   document.getElementById('my-av-big').textContent=me.avatar;
@@ -721,12 +728,14 @@ function updateSummary(){
   document.getElementById('total-pts').textContent=Math.round(pts);
   const b=[
     vals.steps   ?`👟 ${Number(vals.steps).toLocaleString()} kroků`:'',
-    vals.squats  ?`💪 ${vals.squats} opak.`:'',
+    vals.drepy   ?`🦵 ${vals.drepy} dřepů`:'',
+    vals.kliky   ?`💪 ${vals.kliky} kliků`:'',
     vals.bike_km ?`🚴 ${vals.bike_km} km`:'',
     vals.run_km  ?`🏃 ${vals.run_km} km`:'',
     vals.swim_km ?`🏊 ${vals.swim_km} km`:'',
     vals.silovy  ?`🏋️ ${vals.silovy} min`:'',
     vals.pilates ?`🧘 ${vals.pilates} min`:'',
+    vals.aikido  ?`🥋 ${vals.aikido} min`:'',
   ].filter(Boolean);
   document.getElementById('sum-badges').innerHTML=b.map(x=>`<span class="badge">${x}</span>`).join('');
 }
