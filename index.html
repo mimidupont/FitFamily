@@ -260,6 +260,15 @@
     .archive-av{font-size:18px;}.archive-name{flex:1;font-weight:700;}
     .archive-pts{font-weight:800;color:var(--gold);}
 
+    /* ── FAVOURITE SPORTS ── */
+    .fav-sport-row{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:10px 12px;margin-bottom:8px;}
+    .fav-btn{background:none;border:none;font-size:22px;cursor:pointer;color:var(--muted);line-height:1;padding:2px 4px;transition:all .15s;font-family:var(--font);}
+    .fav-btn:hover{color:var(--gold);transform:scale(1.2);}
+    .fav-btn.fav-on{color:var(--gold);}
+    .acts-divider{display:flex;align-items:center;gap:8px;margin:4px 0 8px;color:var(--muted);}
+    .acts-divider::before,.acts-divider::after{content:'';flex:1;height:1px;background:var(--border);}
+    .acts-divider span{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;}
+
     /* ── SETTINGS ── */
     .settings-member{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:11px 13px;display:flex;align-items:center;gap:10px;margin-bottom:8px;}
     .sm-av{font-size:24px;}.sm-bar{width:3px;height:32px;border-radius:2px;flex-shrink:0;}.sm-info{flex:1;}
@@ -403,7 +412,9 @@
   <!-- SETTINGS -->
   <div id="screen-settings" class="screen">
     <div class="content">
-      <div class="sec-label">Členové rodiny</div>
+      <div class="sec-label">Oblíbené sporty</div>
+      <div id="fav-sports-list"></div>
+      <div class="sec-label" style="margin-top:4px">Členové rodiny</div>
       <div id="settings-members"></div>
       <div class="add-section">
         <div class="add-title">Přidat nového člena</div>
@@ -486,6 +497,7 @@ let members=[],logs=[];
 let myId=localStorage.getItem('ff_my_id');
 let vals={steps:0,drepy:0,kliky:0,bike_km:0,run_km:0,swim_km:0,silovy:0,pilates:0,aikido:0};
 let editDate=''; // set on first use in renderMy
+let favSports=JSON.parse(localStorage.getItem('ff_fav_sports')||'[]');
 const nowMonth=()=>new Date().toISOString().slice(0,7);
 let viewMonth=nowMonth();
 let obAv=AVATARS[0],obCol=COLORS[0],newAv=AVATARS[0],newCol=COLORS[0],editAv='',editCol='';
@@ -695,7 +707,9 @@ function renderMy(){
     <button class="date-nav-btn" onclick="changeEditDate(1)" ${isToday?'disabled':''}>›</button>
   `;
 
-  document.getElementById('activity-rows').innerHTML=ACTS.map(a=>`
+  const favActs  = ACTS.filter(a=> favSports.includes(a.key));
+  const otherActs= ACTS.filter(a=>!favSports.includes(a.key));
+  const actCard  = a=>`
     <div class="activity-card" style="border-left-color:${a.color}">
       <div class="act-ico-wrap" style="background:${a.bg}">${a.icon}</div>
       <div class="act-info">
@@ -707,7 +721,12 @@ function renderMy(){
         <input class="cnt-input" id="val-${a.key}" type="number" value="${vals[a.key]}" min="0" max="${a.max}" step="${a.step}" onchange="setVal('${a.key}',this.value)"/>
         <button class="cnt-btn" style="background:${a.bg};color:${a.color}" onclick="adj('${a.key}',${a.step})">+</button>
       </div>
-    </div>`).join('');
+    </div>`;
+  const divider = favActs.length && otherActs.length
+    ? `<div class="acts-divider"><span>Ostatní sporty</span></div>`
+    : '';
+  document.getElementById('activity-rows').innerHTML=
+    favActs.map(actCard).join('') + divider + otherActs.map(actCard).join('');
   updateSummary();
 }
 function adj(key,delta){
@@ -790,8 +809,27 @@ function toggleArchive(ym){
   const o=b.classList.toggle('open');c.textContent=o?'⌄':'›';
 }
 
-// ── SETTINGS ────────────────────────────────────────────
+// ── FAVOURITE SPORTS ────────────────────────────────────
+function renderFavSports(){
+  document.getElementById('fav-sports-list').innerHTML=ACTS.map(a=>{
+    const isFav=favSports.includes(a.key);
+    return `<div class="fav-sport-row">
+      <div class="act-ico-wrap" style="background:${a.bg};width:34px;height:34px;font-size:16px;border-radius:8px;flex-shrink:0">${a.icon}</div>
+      <div style="flex:1;font-size:14px;font-weight:700">${a.label}</div>
+      <button class="fav-btn${isFav?' fav-on':''}" onclick="toggleFav('${a.key}')" title="${isFav?'Odebrat z oblíbených':'Přidat do oblíbených'}">
+        ${isFav?'★':'☆'}
+      </button>
+    </div>`;
+  }).join('');
+}
+function toggleFav(key){
+  if(favSports.includes(key)) favSports=favSports.filter(k=>k!==key);
+  else favSports.push(key);
+  localStorage.setItem('ff_fav_sports',JSON.stringify(favSports));
+  renderFavSports();
+}
 function renderSettings(){
+  renderFavSports();
   document.getElementById('settings-members').innerHTML=members.map(m=>`
     <div class="settings-member">
       <div class="sm-av">${m.avatar}</div>
