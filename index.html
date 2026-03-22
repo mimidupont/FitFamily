@@ -988,17 +988,21 @@ function openRecap(ym){
       </div>
 
       ${actPts.length?`<div class="recap-acts">
-        ${actPts.slice(0,5).map(({a,pts})=>`
-          <div class="recap-act-row">
-            <div class="recap-act-icon">${a.icon}</div>
-            <div class="recap-act-label">${a.label}
-              <span style="color:var(--muted);font-weight:600;font-size:11px">
-                ${a.isFloat?totals[a.key].toFixed(1)+' km':Math.round(totals[a.key])+(a.key==='steps'?' kroků':a.key==='drepy'?' dřepů':a.key==='kliky'?' kliků':' min')}
-              </span>
+        ${actPts.slice(0,5).map(({a,pts})=>{
+          const rawVal=a.isFloat?totals[a.key].toFixed(1):Math.round(totals[a.key]).toLocaleString();
+          const unit=a.isFloat?'km':a.key==='steps'?'kroků':a.key==='drepy'?'dřepů':a.key==='kliky'?'kliků':'min';
+          return `
+          <div class="recap-act-row" style="align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.05)">
+            <div class="recap-act-icon" style="font-size:20px">${a.icon}</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:13px;font-weight:800;color:${a.color}">${rawVal} <span style="font-size:11px;font-weight:700;color:var(--muted)">${unit}</span></div>
+              <div style="display:flex;align-items:center;gap:6px;margin-top:3px">
+                <div class="recap-act-bar-wrap" style="flex:1;width:auto"><div class="recap-act-bar" style="width:${Math.round(pts/maxActPts*100)}%;background:${a.color}"></div></div>
+                <span style="font-size:10px;color:var(--muted);font-weight:600;white-space:nowrap">${Math.round(pts)} b</span>
+              </div>
             </div>
-            <div class="recap-act-bar-wrap"><div class="recap-act-bar" style="width:${Math.round(pts/maxActPts*100)}%;background:${a.color}"></div></div>
-            <div class="recap-act-pts">${Math.round(pts)}b</div>
-          </div>`).join('')}
+          </div>`;
+        }).join('')}
       </div>`:''}
 
       <div class="recap-footer">
