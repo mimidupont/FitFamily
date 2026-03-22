@@ -260,6 +260,63 @@
     .archive-av{font-size:18px;}.archive-name{flex:1;font-weight:700;}
     .archive-pts{font-weight:800;color:var(--gold);}
 
+    /* ── MONTH RECAP MODAL ── */
+    #recap-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.80);z-index:300;align-items:flex-end;justify-content:center;}
+    #recap-modal.open{display:flex;}
+    .recap-sheet{background:var(--nav-bg);border:1px solid var(--border);border-radius:18px 18px 0 0;padding:0;width:100%;max-width:480px;animation:slideUp .22s ease;max-height:88dvh;overflow-y:auto;display:flex;flex-direction:column;}
+    .recap-hero{padding:22px 20px 16px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--nav-bg);z-index:2;}
+    .recap-hero-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
+    .recap-month-label{font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);}
+    .recap-title{font-size:22px;font-weight:900;}
+    .recap-close{background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:18px;width:32px;height:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font);}
+    .recap-close:hover{border-color:var(--text);color:var(--text);}
+    .recap-body{padding:16px;display:flex;flex-direction:column;gap:14px;}
+
+    /* Winner highlight */
+    .recap-winner{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#2a2010,#1e1a08);border:1.5px solid var(--gold);border-radius:var(--radius);padding:15px;}
+    .recap-winner-av{font-size:40px;}
+    .recap-winner-info{flex:1;}
+    .recap-winner-tag{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:2px;}
+    .recap-winner-name{font-size:20px;font-weight:900;}
+    .recap-winner-pts{font-size:12px;color:var(--muted);font-weight:600;}
+
+    /* Per-person recap cards */
+    .recap-person{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+    .recap-person.recap-me{border-color:var(--gold);}
+    .recap-person-header{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--border);}
+    .recap-person-av{font-size:28px;}
+    .recap-person-info{flex:1;}
+    .recap-person-name{font-size:15px;font-weight:900;display:flex;align-items:center;gap:6px;}
+    .recap-person-rank{font-size:12px;color:var(--muted);font-weight:600;}
+    .recap-person-pts{font-size:22px;font-weight:900;}
+    .recap-person-pts small{font-size:12px;color:var(--muted);font-weight:600;}
+
+    /* Stats grid */
+    .recap-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
+    .recap-stat{background:var(--card);padding:10px 13px;}
+    .recap-stat-val{font-size:18px;font-weight:900;}
+    .recap-stat-lbl{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-top:1px;}
+
+    /* Activity breakdown */
+    .recap-acts{padding:10px 14px;display:flex;flex-direction:column;gap:6px;}
+    .recap-act-row{display:flex;align-items:center;gap:8px;font-size:12px;}
+    .recap-act-icon{font-size:16px;width:22px;text-align:center;flex-shrink:0;}
+    .recap-act-label{flex:1;font-weight:700;}
+    .recap-act-bar-wrap{width:80px;height:6px;background:var(--border);border-radius:3px;overflow:hidden;flex-shrink:0;}
+    .recap-act-bar{height:100%;border-radius:3px;transition:width .7s ease;}
+    .recap-act-pts{min-width:44px;text-align:right;font-weight:800;color:var(--gold);}
+
+    /* Streak / badges area */
+    .recap-footer{padding:10px 14px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:6px;}
+    .recap-badge{font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px;background:var(--card2);border:1px solid var(--border);}
+
+    /* Section label inside modal */
+    .recap-sec{font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:-4px;}
+
+    /* Archive recap button */
+    .archive-recap-btn{background:var(--card2);border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:11px;font-weight:800;padding:4px 10px;cursor:pointer;font-family:var(--font);letter-spacing:.3px;transition:all .15s;white-space:nowrap;}
+    .archive-recap-btn:hover{border-color:var(--accent);color:var(--text);}
+
     /* ── FAVOURITE SPORTS ── */
     .fav-sport-row{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:10px 12px;margin-bottom:8px;}
     .fav-btn{background:none;border:none;font-size:22px;cursor:pointer;color:var(--muted);line-height:1;padding:2px 4px;transition:all .15s;font-family:var(--font);}
@@ -424,6 +481,22 @@
         <button class="btn-primary" id="add-btn" disabled onclick="addMember()">Přidat člena</button>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- MONTHLY RECAP MODAL -->
+<div id="recap-modal">
+  <div class="recap-sheet">
+    <div class="recap-hero">
+      <div class="recap-hero-top">
+        <div>
+          <div class="recap-month-label" id="recap-month-label">Rekapitulace</div>
+          <div class="recap-title" id="recap-title"></div>
+        </div>
+        <button class="recap-close" onclick="closeRecap()">✕</button>
+      </div>
+    </div>
+    <div class="recap-body" id="recap-body"></div>
   </div>
 </div>
 
@@ -597,7 +670,11 @@ function renderBoard(){
         <div class="winner-tag">🏆 Vítěz · ${formatMonth(viewMonth)}</div>
         <div class="winner-name">${w.member.name}</div>
         <div class="winner-pts">${Math.round(w.pts)} bodů</div>
-      </div><div class="winner-crown">👑</div></div>`:'';
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
+        <div style="font-size:36px">👑</div>
+        <button class="archive-recap-btn" onclick="openRecap('${viewMonth}')">📊 Rekapitulace</button>
+      </div></div>`:'';
   }else{ww.innerHTML='';}
 
   // Themed race track
@@ -790,7 +867,9 @@ function renderArchive(){
     return `<div class="archive-month">
       <div class="archive-header" onclick="toggleArchive('${ym}')">
         <div class="archive-title">${th.vehicle} ${formatMonth(ym)}${isCur?' 🔴':''}</div>
-        <div class="archive-winner-chip">${w?`${w.member.avatar} ${w.member.name} · ${Math.round(w.pts)}b`:'—'} <span id="chev-${ym}">›</span></div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div class="archive-winner-chip">${w?`${w.member.avatar} ${w.member.name} · ${Math.round(w.pts)}b`:'—'} <span id="chev-${ym}">›</span></div>
+        </div>
       </div>
       <div class="archive-body" id="ab-${ym}">
         ${sorted.map((m,i)=>{
@@ -801,6 +880,9 @@ function renderArchive(){
             <div class="archive-name">${m.name}${m.id===myId?' <span class="me-tag">JÁ</span>':''}</div>
             <div class="archive-pts">${Math.round(monthPts(m.id,ym))} b</div>
           </div>`;}).join('')}
+        <div style="padding:8px 0 2px">
+          <button class="archive-recap-btn" style="width:100%" onclick="openRecap('${ym}')">📊 Rekapitulace měsíce</button>
+        </div>
       </div></div>`;
   }).join('');
 }
@@ -808,6 +890,140 @@ function toggleArchive(ym){
   const b=document.getElementById('ab-'+ym);const c=document.getElementById('chev-'+ym);
   const o=b.classList.toggle('open');c.textContent=o?'⌄':'›';
 }
+
+// ── MONTHLY RECAP ───────────────────────────────────────
+function openRecap(ym){
+  const th=themeForMonth(ym);
+  document.getElementById('recap-month-label').textContent=th.vehicle+' Rekapitulace';
+  document.getElementById('recap-title').textContent=formatMonth(ym);
+
+  const sorted=[...members].sort((a,b)=>monthPts(b.id,ym)-monthPts(a.id,ym));
+  const w=monthWinner(ym);
+
+  // Days in month
+  const [y,mo]=ym.split('-').map(Number);
+  const daysInMonth=new Date(y,mo,0).getDate();
+
+  let html='';
+
+  // Winner highlight
+  if(w){
+    html+=`<div class="recap-winner">
+      <div class="recap-winner-av">${w.member.avatar}</div>
+      <div class="recap-winner-info">
+        <div class="recap-winner-tag">🏆 Vítěz měsíce</div>
+        <div class="recap-winner-name">${w.member.name}</div>
+        <div class="recap-winner-pts">${Math.round(w.pts)} bodů · ${th.label}</div>
+      </div>
+      <div style="font-size:34px">👑</div>
+    </div>`;
+  }
+
+  html+='<div class="recap-sec">Přehled členů</div>';
+
+  // Per-person cards
+  sorted.forEach((m,rank)=>{
+    const mLogs=logs.filter(l=>l.member_id===m.id&&l.date.startsWith(ym));
+    const totalPts=mLogs.reduce((s,l)=>s+(parseFloat(l.points)||0),0);
+    if(totalPts===0&&mLogs.length===0)return; // skip members with no data
+    const activeDays=mLogs.filter(l=>(parseFloat(l.points)||0)>0).length;
+    const consistencyPct=Math.round(activeDays/daysInMonth*100);
+
+    // Aggregate activity totals
+    const totals={};
+    ACTS.forEach(a=>{totals[a.key]=mLogs.reduce((s,l)=>s+(parseFloat(l[a.key])||0),0);});
+
+    // Best single day
+    const bestDay=mLogs.reduce((best,l)=>{
+      const p=parseFloat(l.points)||0;
+      return p>(parseFloat(best?.points)||0)?l:best;
+    },null);
+
+    // Most-earned activity
+    const actPts=ACTS.map(a=>({a,pts:totals[a.key]*a.pts})).filter(x=>x.pts>0).sort((a,b)=>b.pts-a.pts);
+    const topAct=actPts[0];
+    const maxActPts=actPts[0]?.pts||1;
+
+    // Streak calculation
+    let bestStreak=0,curStreak=0,lastDate='';
+    const daySet=new Set(mLogs.filter(l=>(parseFloat(l.points)||0)>0).map(l=>l.date));
+    for(let d=1;d<=daysInMonth;d++){
+      const ds=`${ym}-${String(d).padStart(2,'0')}`;
+      if(daySet.has(ds)){curStreak++;bestStreak=Math.max(bestStreak,curStreak);}
+      else curStreak=0;
+    }
+
+    const medal=rank===0?'🥇':rank===1?'🥈':rank===2?'🥉':`#${rank+1}`;
+    const isMe=m.id===myId;
+
+    html+=`<div class="recap-person${isMe?' recap-me':''}">
+      <div class="recap-person-header">
+        <div class="recap-person-av">${m.avatar}</div>
+        <div class="recap-person-info">
+          <div class="recap-person-name">${medal} ${m.name}${isMe?' <span class="me-tag">JÁ</span>':''}</div>
+          <div class="recap-person-rank">${activeDays} aktivních dní z ${daysInMonth}</div>
+        </div>
+        <div>
+          <div class="recap-person-pts" style="color:${m.color}">${Math.round(totalPts)}<small> b</small></div>
+        </div>
+      </div>
+
+      <div class="recap-stats">
+        <div class="recap-stat">
+          <div class="recap-stat-val">${activeDays}</div>
+          <div class="recap-stat-lbl">Aktivní dny</div>
+        </div>
+        <div class="recap-stat">
+          <div class="recap-stat-val">${consistencyPct}%</div>
+          <div class="recap-stat-lbl">Konzistence</div>
+        </div>
+        <div class="recap-stat">
+          <div class="recap-stat-val">${bestStreak}</div>
+          <div class="recap-stat-lbl">Nejdelší série</div>
+        </div>
+        <div class="recap-stat">
+          <div class="recap-stat-val">${bestDay?Math.round(parseFloat(bestDay.points)||0):0}<small style="font-size:11px;color:var(--muted)"> b</small></div>
+          <div class="recap-stat-lbl">Nejlepší den</div>
+        </div>
+      </div>
+
+      ${actPts.length?`<div class="recap-acts">
+        ${actPts.slice(0,5).map(({a,pts})=>`
+          <div class="recap-act-row">
+            <div class="recap-act-icon">${a.icon}</div>
+            <div class="recap-act-label">${a.label}
+              <span style="color:var(--muted);font-weight:600;font-size:11px">
+                ${a.isFloat?totals[a.key].toFixed(1)+' km':Math.round(totals[a.key])+(a.key==='steps'?' kroků':a.key==='drepy'?' dřepů':a.key==='kliky'?' kliků':' min')}
+              </span>
+            </div>
+            <div class="recap-act-bar-wrap"><div class="recap-act-bar" style="width:${Math.round(pts/maxActPts*100)}%;background:${a.color}"></div></div>
+            <div class="recap-act-pts">${Math.round(pts)}b</div>
+          </div>`).join('')}
+      </div>`:''}
+
+      <div class="recap-footer">
+        ${activeDays===0?'<span class="recap-badge">😴 Žádná aktivita</span>':''}
+        ${activeDays>=daysInMonth?'<span class="recap-badge">🔥 Perfektní měsíc!</span>':''}
+        ${bestStreak>=7?'<span class="recap-badge">⚡ Série '+bestStreak+' dní</span>':''}
+        ${consistencyPct>=80?'<span class="recap-badge">💎 Superkonzistence</span>':''}
+        ${totals.steps>=100000?'<span class="recap-badge">👟 '+Math.round(totals.steps/1000)+'k kroků</span>':''}
+        ${totals.run_km>=50?'<span class="recap-badge">🏃 '+totals.run_km.toFixed(0)+'km běhu</span>':''}
+        ${totals.bike_km>=100?'<span class="recap-badge">🚴 '+totals.bike_km.toFixed(0)+'km kola</span>':''}
+        ${totals.swim_km>=10?'<span class="recap-badge">🏊 '+totals.swim_km.toFixed(1)+'km plavání</span>':''}
+        ${topAct&&topAct.pts>0?`<span class="recap-badge">${topAct.a.icon} Hlavní sport</span>`:''}
+        ${rank===0&&totalPts>0?'<span class="recap-badge" style="background:#2a2010;border-color:var(--gold);color:var(--gold)">🏆 Vítěz měsíce</span>':''}
+      </div>
+    </div>`;
+  });
+
+  if(!html.includes('recap-person')){
+    html+='<div style="text-align:center;padding:30px;color:var(--muted)">😴 Tento měsíc nebyla zaznamenána žádná aktivita.</div>';
+  }
+
+  document.getElementById('recap-body').innerHTML=html;
+  document.getElementById('recap-modal').classList.add('open');
+}
+function closeRecap(){document.getElementById('recap-modal').classList.remove('open');}
 
 // ── FAVOURITE SPORTS ────────────────────────────────────
 function renderFavSports(){
