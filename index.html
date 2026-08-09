@@ -1,1184 +1,1085 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
-  <title>FitFamily Challenge</title>
-  <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIkZpdEZhbWlseSBDaGFsbGVuZ2UiLCAic2hvcnRfbmFtZSI6ICJGaXRGYW1pbHkiLCAiZGVzY3JpcHRpb24iOiAiUm9kaW5uXHUwMGUxIGZpdG5lc3Mgdlx1MDBmZHp2YSIsICJzdGFydF91cmwiOiAiLyIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAiYmFja2dyb3VuZF9jb2xvciI6ICIjMGYxMTE3IiwgInRoZW1lX2NvbG9yIjogIiM3YzZhZjciLCAib3JpZW50YXRpb24iOiAicG9ydHJhaXQiLCAiaWNvbnMiOiBbeyJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCNGJXeHVjejBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01DOXpkbWNpSUhkcFpIUm9QU0kxTVRJaUlHaGxhV2RvZEQwaU5URXlJaUIyYVdWM1FtOTRQU0l3SURBZ05URXlJRFV4TWlJK1BISmxZM1FnZDJsa2RHZzlJalV4TWlJZ2FHVnBaMmgwUFNJMU1USWlJSEo0UFNJeE1EQWlJR1pwYkd3OUlpTXhOVEUzTWpBaUx6NDhkR1Y0ZENCNFBTSXlOVFlpSUhrOUlqTTBNQ0lnWm05dWRDMXphWHBsUFNJeU9UQWlJSFJsZUhRdFlXNWphRzl5UFNKdGFXUmtiR1VpSUdadmJuUXRabUZ0YVd4NVBTSnpaWEpwWmlJKzhKK1Boand2ZEdWNGRENDhMM04yWno0PSIsICJzaXplcyI6ICIxOTJ4MTkyIiwgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCJ9LCB7InNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSGRwWkhSb1BTSTFNVElpSUdobGFXZG9kRDBpTlRFeUlpQjJhV1YzUW05NFBTSXdJREFnTlRFeUlEVXhNaUkrUEhKbFkzUWdkMmxrZEdnOUlqVXhNaUlnYUdWcFoyaDBQU0kxTVRJaUlISjRQU0l4TURBaUlHWnBiR3c5SWlNeE5URTNNakFpTHo0OGRHVjRkQ0I0UFNJeU5UWWlJSGs5SWpNME1DSWdabTl1ZEMxemFYcGxQU0l5T1RBaUlIUmxlSFF0WVc1amFHOXlQU0p0YVdSa2JHVWlJR1p2Ym5RdFptRnRhV3g1UFNKelpYSnBaaUkrOEorUGhqd3ZkR1Y0ZEQ0OEwzTjJaejQ9IiwgInNpemVzIjogIjUxMng1MTIiLCAidHlwZSI6ICJpbWFnZS9zdmcreG1sIiwgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIn1dfQ=="/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
-  <style>
-    :root{
-      --bg:#0f1117;--nav-bg:#151720;--card:#1a1d2e;--card2:#1e2133;
-      --border:#2a2d42;--text:#e8eaf6;--muted:#6b7099;
-      --gold:#ffd700;--accent:#7c6af7;--red:#e05c5c;
-      --radius:14px;--font:'Nunito',sans-serif;
-    }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    html{height:100%;}
-    body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:100%;}
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1"/>
+<meta name="theme-color" content="#E7E9F5"/>
+<title>FitFamily · Startovní listina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=JetBrains+Mono:wght@700;800&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════════
+   FitFamily — "Startovní listina"
+   Ink on ice. Bib numbers, jersey colours,
+   a timing tower and a training grid.
+   ═══════════════════════════════════════════ */
+:root{
+  --ice:#E7E9F5;      /* page */
+  --paper:#FFFFFF;    /* cards */
+  --ink:#15153A;      /* text, borders */
+  --ink-2:#5B5F86;    /* secondary text */
+  --ink-3:#9498B8;    /* tertiary */
+  --volt:#3B2BF5;     /* primary action */
+  --flash:#FFE24B;    /* highlight, today, gold */
+  --hot:#FF3D6E;      /* streak, danger */
+  --grass:#00C48C;    /* saved, positive */
+  --r:16px;
+  --bar:2px;          /* border weight */
+  --nav-h:70px;
+  --disp:'Archivo',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html{height:100%;-webkit-text-size-adjust:100%;}
+body{
+  background:var(--ice);color:var(--ink);min-height:100%;
+  font-family:var(--disp);font-weight:600;font-variation-settings:'wdth' 100;
+  overscroll-behavior-y:none;
+}
+button,input{font-family:inherit;color:inherit;}
+:focus-visible{outline:3px solid var(--volt);outline-offset:2px;}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
 
-    /* ── LOADING ── */
-    #loading{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;z-index:999;}
-    .spinner{width:44px;height:44px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;}
-    @keyframes spin{to{transform:rotate(360deg);}}
+/* ── type roles ───────────────────────────── */
+.disp{font-weight:900;font-variation-settings:'wdth' 118;letter-spacing:-.02em;line-height:1;}
+.eyebrow{font-family:var(--mono);font-weight:700;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);}
+.fig{font-family:var(--mono);font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.03em;}
 
-    /* ── TOAST ── */
-    #toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(10px);background:#1a2e1a;border:1px solid #4ade80;color:var(--text);font-weight:700;font-size:13px;padding:10px 20px;border-radius:100px;opacity:0;transition:all .25s;pointer-events:none;z-index:500;white-space:nowrap;}
-    #toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+/* ── shells ───────────────────────────────── */
+.wrap{max-width:480px;margin:0 auto;}
+.pop{border:var(--bar) solid var(--ink);border-radius:var(--r);background:var(--paper);}
 
-    /* ── ONBOARDING ── */
-    #onboarding{display:none;min-height:100dvh;flex-direction:column;justify-content:center;padding:32px 24px;gap:20px;max-width:440px;margin:0 auto;}
-    #onboarding.active{display:flex;}
-    .ob-icon{font-size:52px;}.ob-title{font-size:34px;font-weight:900;line-height:1.1;}
-    .ob-title span{color:var(--gold);}
-    .ob-sub{color:var(--muted);font-size:15px;line-height:1.5;}
-    .lbl{font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
-    .input-field{width:100%;background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:13px 16px;font-size:16px;color:var(--text);font-family:var(--font);outline:none;transition:border-color .2s;}
-    .input-field:focus{border-color:var(--accent);}
-    .input-field::placeholder{color:var(--muted);}
-    .avatar-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;}
-    .av-btn{aspect-ratio:1;font-size:24px;background:var(--card);border:2px solid var(--border);border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;}
-    .av-btn.sel{border-color:var(--gold);background:#ffd70015;transform:scale(1.08);}
-    .color-row{display:flex;gap:10px;flex-wrap:wrap;}
-    .col-dot{width:34px;height:34px;border-radius:50%;cursor:pointer;border:3px solid transparent;transition:all .15s;}
-    .col-dot.sel{border-color:white;transform:scale(1.18);}
-    .btn-primary{background:linear-gradient(135deg,var(--accent),#5b4fe0);color:white;border:none;border-radius:var(--radius);padding:15px;font-size:16px;font-weight:800;font-family:var(--font);cursor:pointer;width:100%;transition:opacity .2s,transform .1s;}
-    .btn-primary:active{transform:scale(.97);}
-    .btn-primary:disabled{opacity:.35;cursor:not-allowed;}
-    .btn-secondary{background:var(--card2);color:var(--muted);border:1px solid var(--border);border-radius:var(--radius);padding:13px;font-size:15px;font-weight:700;font-family:var(--font);cursor:pointer;width:100%;transition:all .15s;}
+/* ── loading / toast ──────────────────────── */
+#loading{position:fixed;inset:0;background:var(--ice);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;z-index:900;}
+.flag{width:54px;height:54px;border:var(--bar) solid var(--ink);border-radius:12px;background:
+  repeating-conic-gradient(var(--ink) 0 25%,#fff 0 50%) 0 0/16px 16px;animation:tilt 1s ease-in-out infinite;}
+@keyframes tilt{0%,100%{transform:rotate(-6deg);}50%{transform:rotate(6deg);}}
+#toast{position:fixed;left:50%;transform:translateX(-50%) translateY(10px);bottom:calc(var(--nav-h) + 22px + env(safe-area-inset-bottom));
+  background:var(--ink);color:#fff;font-size:13px;font-weight:800;padding:11px 18px;border-radius:100px;opacity:0;
+  transition:opacity .18s,transform .18s;pointer-events:none;z-index:800;max-width:88vw;text-align:center;}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+#toast.bad{background:var(--hot);}
 
-    /* ── APP ── */
-    #app{display:none;flex-direction:column;min-height:100dvh;}
-    #app.active{display:flex;}
-    .header{background:var(--nav-bg);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100;}
-    .header-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#ff6b35,#ffd700);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
-    .header-text{flex:1;}
-    .header-title{font-size:17px;font-weight:900;}
-    .header-sub{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);}
-    .user-chip{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:5px 10px 5px 5px;cursor:pointer;transition:border-color .2s;flex-shrink:0;}
-    .user-chip:hover{border-color:var(--accent);}
-    .chip-av{width:28px;height:28px;border-radius:50%;background:var(--card2);display:flex;align-items:center;justify-content:center;font-size:15px;}
-    .chip-name{font-size:12px;font-weight:800;}
-    .chip-pts{font-size:11px;color:var(--gold);font-weight:700;}
+/* ── buttons ──────────────────────────────── */
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:54px;padding:0 18px;
+  border:var(--bar) solid var(--ink);border-radius:14px;background:var(--volt);color:#fff;font-size:16px;font-weight:900;
+  font-variation-settings:'wdth' 112;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .08s,box-shadow .08s;}
+.btn:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink);}
+.btn:disabled{opacity:.4;box-shadow:none;transform:none;cursor:not-allowed;}
+.btn.alt{background:var(--paper);color:var(--ink);}
+.btn-sm{min-height:42px;font-size:13px;border-radius:11px;box-shadow:3px 3px 0 var(--ink);}
+.icon-btn{width:42px;height:42px;flex:0 0 42px;display:flex;align-items:center;justify-content:center;
+  border:var(--bar) solid var(--ink);border-radius:12px;background:var(--paper);font-size:17px;font-weight:900;cursor:pointer;}
+.icon-btn:active{transform:scale(.94);}
 
-    .month-bar{border-bottom:1px solid var(--border);padding:8px 16px;display:flex;align-items:center;gap:10px;transition:background .5s;}
-    .month-nav-btn{background:none;border:1px solid rgba(255,255,255,.15);border-radius:8px;font-size:16px;width:32px;height:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;color:inherit;}
-    .month-nav-btn:hover{border-color:rgba(255,255,255,.4);}
-    .month-nav-btn:disabled{opacity:.3;cursor:not-allowed;}
-    .month-label{flex:1;text-align:center;font-size:14px;font-weight:800;}
-    .month-current-tag{font-size:10px;font-weight:800;padding:2px 8px;border-radius:100px;letter-spacing:.5px;background:rgba(255,255,255,.2);}
+/* ── inputs ───────────────────────────────── */
+.field{width:100%;min-height:52px;border:var(--bar) solid var(--ink);border-radius:12px;background:var(--paper);
+  padding:0 15px;font-size:16px;font-weight:700;outline:none;}
+.field::placeholder{color:var(--ink-3);font-weight:600;}
+.field:focus{box-shadow:3px 3px 0 var(--volt);}
+.lbl{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-bottom:8px;display:block;}
 
-    .tabs{display:flex;background:var(--nav-bg);border-bottom:1px solid var(--border);}
-    .tab-btn{flex:1;padding:12px 6px;font-size:12px;font-weight:800;font-family:var(--font);background:none;border:none;color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px;border-bottom:2px solid transparent;transition:all .2s;}
-    .tab-btn.active{color:var(--text);border-bottom-color:var(--accent);}
+/* ── pickers ──────────────────────────────── */
+.avgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;}
+.av{aspect-ratio:1;font-size:22px;border:var(--bar) solid var(--ink);border-radius:11px;background:var(--paper);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.av.sel{background:var(--flash);box-shadow:3px 3px 0 var(--ink);}
+.colrow{display:flex;gap:9px;flex-wrap:wrap;}
+.col{width:40px;height:40px;border:var(--bar) solid var(--ink);border-radius:50%;cursor:pointer;position:relative;}
+.col.sel::after{content:'✓';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:17px;font-weight:900;color:var(--ink);}
 
-    .content{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:14px;}
-    .screen{display:none;flex:1;flex-direction:column;}
-    .screen.active{display:flex;}
-    .sec-label{font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+/* ═══ ONBOARDING ═══ */
+#onboard{display:none;min-height:100dvh;flex-direction:column;justify-content:center;gap:20px;padding:30px 20px calc(30px + env(safe-area-inset-bottom));}
+#onboard.on{display:flex;}
+.ob-h{font-size:40px;}
+.ob-h em{font-style:normal;background:var(--flash);padding:0 6px;border:var(--bar) solid var(--ink);border-radius:8px;display:inline-block;}
+.ob-p{font-size:15px;color:var(--ink-2);font-weight:600;line-height:1.5;}
+.ob-row{display:flex;align-items:center;gap:12px;width:100%;padding:11px 14px;border:var(--bar) solid var(--ink);
+  border-radius:14px;background:var(--paper);cursor:pointer;margin-bottom:9px;}
+.ob-row:active{transform:translate(2px,2px);}
+.rule{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--ink-3);text-transform:uppercase;}
+.rule::before,.rule::after{content:'';flex:1;height:2px;background:var(--ink-3);opacity:.35;}
 
-    /* ── THEMED RACE CARD ── */
-    .theme-card{border-radius:var(--radius);padding:14px;border:1px solid var(--border);overflow:hidden;position:relative;}
-    .theme-title{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+/* ═══ APP SHELL ═══ */
+#app{display:none;flex-direction:column;min-height:100dvh;}
+#app.on{display:flex;}
+.top{position:sticky;top:0;z-index:40;background:var(--ice);padding:calc(10px + env(safe-area-inset-top)) 16px 10px;
+  display:flex;align-items:center;gap:10px;border-bottom:var(--bar) solid var(--ink);}
+.top-mid{flex:1;min-width:0;}
+.top-title{font-size:20px;margin-top:3px;}
+.mnav{display:flex;align-items:center;gap:6px;}
+.mnav button{width:34px;height:34px;border:var(--bar) solid var(--ink);border-radius:9px;background:var(--paper);
+  font-size:15px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.mnav button:disabled{opacity:.25;}
+.scroll{flex:1;overflow-y:auto;padding:16px 16px calc(var(--nav-h) + 34px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:14px;}
+.screen{display:none;flex-direction:column;gap:14px;}
+.screen.on{display:flex;}
+.sec{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);
+  display:flex;align-items:center;gap:8px;}
+.sec::after{content:'';flex:1;height:2px;background:var(--ink);opacity:.14;}
 
-    /* Each race row */
-    .t-row{display:flex;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);}
-    .t-row:last-child{border-bottom:none;}
-    .t-medal{font-size:17px;width:24px;text-align:center;flex-shrink:0;}
-    .t-av{font-size:20px;flex-shrink:0;}
-    .t-info{flex:1;min-width:0;}
-    .t-name{font-size:13px;font-weight:800;display:flex;align-items:center;gap:5px;}
-    .t-track{position:relative;height:20px;margin-top:5px;border-radius:10px;overflow:hidden;}
-    .t-track-bg{position:absolute;inset:0;border-radius:10px;}
-    .t-track-fill{position:absolute;left:0;top:0;bottom:0;border-radius:10px;transition:width .9s cubic-bezier(.4,0,.2,1);display:flex;align-items:center;justify-content:flex-end;padding-right:4px;}
-    .t-vehicle{font-size:16px;line-height:1;position:relative;z-index:2;}
-    .t-pts{font-size:15px;font-weight:900;flex-shrink:0;min-width:48px;text-align:right;}
-    .me-tag{background:var(--gold);color:#000;font-size:9px;font-weight:900;padding:1px 5px;border-radius:100px;}
+/* ═══ BOTTOM NAV ═══ */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--paper);border-top:var(--bar) solid var(--ink);
+  height:calc(var(--nav-h) + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);
+  display:flex;max-width:480px;margin:0 auto;}
+.nb{flex:1;background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:4px;font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);}
+.nb i{font-style:normal;font-size:19px;line-height:1;filter:grayscale(1);opacity:.45;transition:all .15s;}
+.nb.on{color:var(--ink);}
+.nb.on i{filter:none;opacity:1;transform:translateY(-2px);}
+.nb-fab{flex:0 0 84px;display:flex;align-items:center;justify-content:center;}
+.fab{width:62px;height:62px;margin-top:-22px;border:var(--bar) solid var(--ink);border-radius:20px;background:var(--volt);
+  color:#fff;font-size:28px;font-weight:900;cursor:pointer;box-shadow:0 4px 0 var(--ink);display:flex;align-items:center;justify-content:center;}
+.fab:active{transform:translateY(4px);box-shadow:0 0 0 var(--ink);}
+.fab.on{background:var(--flash);color:var(--ink);}
 
-    /* ── THEME: MARCH — CAR RACING ── */
-    .theme-march{background:linear-gradient(160deg,#1a0a0a,#0d1a0d);}
-    .theme-march .t-track-bg{background:repeating-linear-gradient(90deg,#1c1c1c 0,#1c1c1c 18px,#2a2a2a 18px,#2a2a2a 36px);}
-    .theme-march .t-track-fill{background:linear-gradient(90deg,#e03030,#ff6600);}
-    @keyframes smoke{0%{opacity:.8;transform:scale(.5) translate(0,0);}100%{opacity:0;transform:scale(2) translate(-20px,-10px);}}
-    .smoke-puff{position:absolute;right:22px;top:-4px;font-size:10px;animation:smoke 1s ease-out infinite;pointer-events:none;}
-    .smoke-puff:nth-child(2){animation-delay:.3s;right:30px;}
-    @keyframes road-dash{from{background-position:0 0;}to{background-position:-72px 0;}}
-    .theme-march .t-track-bg{animation:road-dash .6s linear infinite;}
+/* ═══ RACE BANNER ═══ */
+.banner{border:var(--bar) solid var(--ink);border-radius:var(--r);padding:12px 14px;display:flex;align-items:center;gap:12px;}
+.banner-veh{font-size:30px;line-height:1;}
+.banner-name{font-size:17px;}
+.banner-sub{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-top:3px;}
 
-    /* ── THEME: APRIL — ROLLERCOASTER ── */
-    .theme-april{background:linear-gradient(160deg,#0a0a2a,#1a0a2a);}
-    @keyframes coaster-shake{0%,100%{transform:translateY(0);}25%{transform:translateY(-2px);}75%{transform:translateY(2px);}}
-    .theme-april .t-vehicle{animation:coaster-shake .3s ease-in-out infinite;}
-    .theme-april .t-track-bg{background:repeating-linear-gradient(90deg,#1e1e3a 0,#1e1e3a 8px,#2a2a4a 8px,#2a2a4a 16px);}
-    .theme-april .t-track-fill{background:linear-gradient(90deg,#7c3aed,#ec4899);}
-    @keyframes star-twinkle{0%,100%{opacity:1;}50%{opacity:.2;}}
+/* ═══ HERO — your standing ═══ */
+.hero{border:var(--bar) solid var(--ink);border-radius:var(--r);background:var(--paper);overflow:hidden;box-shadow:4px 4px 0 var(--ink);}
+.hero-top{padding:15px 16px 13px;display:flex;align-items:flex-start;gap:14px;}
+.hero-fig{font-size:46px;line-height:.85;margin-top:6px;}
+.hero-fig small{font-size:16px;color:var(--ink-2);margin-left:3px;}
+.hero-meta{margin-left:auto;text-align:right;display:flex;flex-direction:column;gap:5px;align-items:flex-end;}
+.pill{display:inline-flex;align-items:center;gap:5px;border:var(--bar) solid var(--ink);border-radius:100px;
+  padding:3px 9px;font-size:11px;font-weight:800;background:var(--paper);white-space:nowrap;}
+.pill.hot{background:var(--hot);color:#fff;}
+.pill.flash{background:var(--flash);}
+.hero-gap{padding:11px 16px;border-top:var(--bar) solid var(--ink);font-size:13px;font-weight:700;background:var(--ice);}
+.hero-gap b{font-family:var(--mono);font-weight:800;}
+.hero-cta{padding:12px 14px 14px;}
 
-    /* ── THEME: MAY — BICYCLE RACE ── */
-    .theme-may{background:linear-gradient(160deg,#0a1a0a,#0a1a14);}
-    @keyframes wheel-spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-    .theme-may .t-vehicle{display:inline-block;animation:wheel-spin .5s linear infinite;}
-    .theme-may .t-track-bg{background:linear-gradient(90deg,#143314,#1a4a1a);}
-    .theme-may .t-track-fill{background:linear-gradient(90deg,#16a34a,#4ade80);}
+/* ═══ TIMING TOWER ═══ */
+.tower{border:var(--bar) solid var(--ink);border-radius:var(--r);background:var(--paper);overflow:hidden;}
+.tw{display:flex;align-items:stretch;border-bottom:var(--bar) solid var(--ink);}
+.tw:last-child{border-bottom:none;}
+.tw.me{background:#FFFBE6;}
+.bib{flex:0 0 44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  border-right:var(--bar) solid var(--ink);background:var(--ice);}
+.bib-n{font-family:var(--mono);font-size:17px;font-weight:800;line-height:1;}
+.bib-l{font-family:var(--mono);font-size:7px;letter-spacing:.1em;color:var(--ink-3);}
+.tw.p1 .bib{background:var(--flash);}
+.tw-body{flex:1;min-width:0;padding:9px 11px 10px;}
+.tw-line{display:flex;align-items:center;gap:7px;}
+.tw-av{font-size:19px;line-height:1;}
+.tw-name{font-size:14px;font-weight:900;font-variation-settings:'wdth' 112;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.tw-pts{margin-left:auto;font-family:var(--mono);font-size:15px;font-weight:800;white-space:nowrap;}
+.tw-pts span{font-size:10px;color:var(--ink-2);}
+.tw-track{height:12px;margin-top:7px;border:2px solid var(--ink);border-radius:100px;background:var(--ice);position:relative;}
+.tw-fill{position:absolute;left:0;top:0;bottom:0;border-radius:100px;width:0;animation:grow .8s cubic-bezier(.2,.8,.2,1) forwards;}
+@keyframes grow{to{width:var(--w);}}
+.tw-veh{position:absolute;top:50%;font-size:15px;line-height:1;transform:translate(-52%,-52%);left:0;
+  animation:ride .8s cubic-bezier(.2,.8,.2,1) forwards;}
+@keyframes ride{to{left:var(--w);}}
+.tw.p1 .tw-veh{animation:ride .8s cubic-bezier(.2,.8,.2,1) forwards, bump 1.1s .9s ease-in-out infinite;}
+@keyframes bump{0%,100%{transform:translate(-52%,-52%);}50%{transform:translate(-52%,-88%);}}
+.tw-gap{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--ink-3);margin-top:5px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
-    /* ── THEME: JUNE — SWIMMING ── */
-    .theme-june{background:linear-gradient(160deg,#051520,#0a2030);}
-    @keyframes wave{0%,100%{transform:translateY(0) scaleX(1);}50%{transform:translateY(-3px) scaleX(1.05);}}
-    .theme-june .t-vehicle{animation:wave 1s ease-in-out infinite;}
-    .theme-june .t-track-bg{background:repeating-linear-gradient(180deg,#062030 0,#062030 4px,#0a3050 4px,#0a3050 8px);}
-    .theme-june .t-track-fill{background:linear-gradient(90deg,#0ea5e9,#22d3ee);}
+/* ═══ TODAY ROW ═══ */
+.hstrip{display:flex;gap:9px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;}
+.hstrip::-webkit-scrollbar{display:none;}
+.hcard{flex:0 0 auto;width:88px;border:var(--bar) solid var(--ink);border-radius:14px;background:var(--paper);
+  padding:10px 8px;text-align:center;}
+.hcard.done{background:var(--flash);}
+.hcard-av{font-size:24px;line-height:1;}
+.hcard-nm{font-size:12px;font-weight:800;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hcard-v{font-family:var(--mono);font-size:12px;font-weight:800;margin-top:3px;color:var(--ink-2);}
 
-    /* ── THEME: JULY — ROCKET ── */
-    .theme-july{background:linear-gradient(160deg,#05050f,#0a0a2a);}
-    @keyframes rocket-fly{0%,100%{transform:translateY(0) rotate(-5deg);}50%{transform:translateY(-4px) rotate(5deg);}}
-    .theme-july .t-vehicle{animation:rocket-fly .8s ease-in-out infinite;}
-    @keyframes stars-scroll{from{background-position:0 0;}to{background-position:-100px 0;}}
-    .theme-july .t-track-bg{background:radial-gradient(circle,#ffffff22 1px,transparent 1px) 0 0/20px 20px;animation:stars-scroll 3s linear infinite;}
-    .theme-july .t-track-fill{background:linear-gradient(90deg,#4f46e5,#7c3aed,#ec4899);}
+/* ═══ SCORING ═══ */
+.rates{border:var(--bar) solid var(--ink);border-radius:var(--r);background:var(--paper);overflow:hidden;}
+.rates-h{padding:13px 15px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-size:14px;font-weight:900;}
+.rates-b{display:none;border-top:var(--bar) solid var(--ink);}
+.rates.open .rates-b{display:block;}
+.rate{display:flex;align-items:center;gap:10px;padding:9px 15px;border-bottom:1px solid rgba(21,21,58,.12);}
+.rate:last-child{border-bottom:none;}
+.rate-i{width:30px;height:30px;border:2px solid var(--ink);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;}
+.rate-n{flex:1;font-size:13px;font-weight:800;}
+.rate-v{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--ink-2);}
 
-    /* ── THEME: AUGUST — SURFING ── */
-    .theme-august{background:linear-gradient(160deg,#051015,#0a2025);}
-    @keyframes surf{0%,100%{transform:rotate(-8deg) translateY(0);}50%{transform:rotate(8deg) translateY(-3px);}}
-    .theme-august .t-vehicle{animation:surf 1.2s ease-in-out infinite;}
-    .theme-august .t-track-bg{background:repeating-linear-gradient(90deg,#0a3040 0,#0a3040 12px,#0f3a4a 12px,#0f3a4a 24px);}
-    .theme-august .t-track-fill{background:linear-gradient(90deg,#0891b2,#06b6d4,#67e8f9);}
+/* ═══ TRAINING GRID ═══ */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+.stat{border:var(--bar) solid var(--ink);border-radius:14px;background:var(--paper);padding:11px 13px;}
+.stat-v{font-size:22px;line-height:1;}
+.stat-v small{font-size:11px;color:var(--ink-2);}
+.stat-l{font-family:var(--mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-2);margin-top:5px;}
+.stat.accent{background:var(--flash);}
+.seg{display:flex;border:var(--bar) solid var(--ink);border-radius:100px;background:var(--paper);overflow:hidden;}
+.seg button{flex:1;border:none;background:none;padding:11px 6px;font-size:13px;font-weight:800;cursor:pointer;color:var(--ink-2);}
+.seg button.on{background:var(--ink);color:#fff;}
+.grid-card{border:var(--bar) solid var(--ink);border-radius:var(--r);background:var(--paper);padding:13px;}
+.dow{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:7px;}
+.dow span{text-align:center;font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.06em;color:var(--ink-3);text-transform:uppercase;}
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;}
+.day{aspect-ratio:1;border:2px solid var(--ink);border-radius:9px;background:var(--paper);cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:0;}
+.day:active{transform:scale(.9);}
+.day.pad{visibility:hidden;pointer-events:none;}
+.day.rest{background:repeating-linear-gradient(45deg,transparent 0 3px,rgba(21,21,58,.09) 3px 6px);}
+.day.future{border-style:dashed;border-color:var(--ink-3);opacity:.45;pointer-events:none;background:none;}
+.day.today{box-shadow:0 0 0 3px var(--volt);}
+.day-n{font-family:var(--mono);font-size:11px;font-weight:800;line-height:1;}
+.day-p{font-family:var(--mono);font-size:8px;font-weight:700;line-height:1;opacity:.85;}
+.day-f{font-size:9px;line-height:1;letter-spacing:-1.5px;}
+.key{display:flex;align-items:center;gap:5px;justify-content:center;margin-top:12px;
+  font-family:var(--mono);font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);}
+.key i{width:14px;height:14px;border:2px solid var(--ink);border-radius:4px;display:block;}
 
-    /* ── THEME: SEPTEMBER — HIKING ── */
-    .theme-september{background:linear-gradient(160deg,#0f1a08,#1a1408);}
-    @keyframes hike{0%,100%{transform:translateY(0);}50%{transform:translateY(-3px);}}
-    .theme-september .t-vehicle{animation:hike .7s ease-in-out infinite;}
-    .theme-september .t-track-bg{background:linear-gradient(90deg,#2d1a08,#3a2010,#2d2a08);}
-    .theme-september .t-track-fill{background:linear-gradient(90deg,#b45309,#d97706,#fbbf24);}
+/* ═══ LOG SCREEN ═══ */
+.datebar{display:flex;align-items:center;gap:9px;}
+.datebar-mid{flex:1;text-align:center;min-width:0;}
+.datebar-d{font-size:19px;}
+.datebar-f{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-top:4px;}
+.save{display:flex;align-items:center;justify-content:center;gap:7px;font-family:var(--mono);font-size:10px;
+  font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);padding:9px;background:none;border:none;width:100%;cursor:default;}
+.save i{width:9px;height:9px;border-radius:50%;background:var(--ink-3);display:block;flex:0 0 9px;}
+.save.saved i{background:var(--grass);}
+.save.pending i{background:var(--flash);animation:pulse .8s ease-in-out infinite;}
+.save.err{color:var(--hot);cursor:pointer;}.save.err i{background:var(--hot);}
+@keyframes pulse{50%{opacity:.25;}}
 
-    /* ── THEME: OCTOBER — WITCH ON BROOMSTICK ── */
-    .theme-october{background:linear-gradient(160deg,#0f0a1a,#1a0a0f);}
-    @keyframes fly-broom{0%,100%{transform:translateY(0) rotate(-3deg);}50%{transform:translateY(-5px) rotate(3deg);}}
-    .theme-october .t-vehicle{animation:fly-broom 1s ease-in-out infinite;}
-    @keyframes spooky-bg{from{background-position:0 0;}to{background-position:60px 0;}}
-    .theme-october .t-track-bg{background:repeating-linear-gradient(90deg,#200a20 0,#200a20 15px,#2a0a10 15px,#2a0a10 30px);animation:spooky-bg 1s linear infinite;}
-    .theme-october .t-track-fill{background:linear-gradient(90deg,#7c2d12,#ea580c,#fbbf24);}
+.tally{border:var(--bar) solid var(--ink);border-radius:var(--r);background:var(--ink);color:#fff;padding:15px 16px;
+  display:flex;align-items:center;gap:14px;box-shadow:4px 4px 0 var(--volt);}
+.tally-n{font-size:40px;line-height:.9;}
+.tally-n small{font-size:14px;opacity:.6;}
+.tally-l{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;opacity:.65;margin-bottom:6px;}
+.tally-chips{display:flex;flex-wrap:wrap;gap:4px;margin-left:auto;justify-content:flex-end;max-width:54%;}
+.tchip{font-size:10px;font-weight:800;padding:2px 7px;border-radius:100px;background:rgba(255,255,255,.16);white-space:nowrap;}
 
-    /* ── THEME: NOVEMBER — HOT AIR BALLOON ── */
-    .theme-november{background:linear-gradient(160deg,#0a0a1a,#1a0f0a);}
-    @keyframes balloon-float{0%,100%{transform:translateY(0) rotate(-2deg);}33%{transform:translateY(-5px) rotate(2deg);}66%{transform:translateY(-2px) rotate(-1deg);}}
-    .theme-november .t-vehicle{animation:balloon-float 2s ease-in-out infinite;}
-    .theme-november .t-track-bg{background:linear-gradient(90deg,#1a1428,#231a30);}
-    .theme-november .t-track-fill{background:linear-gradient(90deg,#9333ea,#c026d3,#e879f9);}
+.act{border:var(--bar) solid var(--ink);border-radius:var(--r);background:var(--paper);padding:12px;margin-bottom:10px;}
+.act.on{box-shadow:4px 4px 0 var(--ink);}
+.act-h{display:flex;align-items:center;gap:10px;}
+.act-i{width:40px;height:40px;flex:0 0 40px;border:var(--bar) solid var(--ink);border-radius:12px;
+  display:flex;align-items:center;justify-content:center;font-size:19px;}
+.act-n{font-size:15px;font-weight:900;font-variation-settings:'wdth' 112;line-height:1.1;}
+.act-r{font-family:var(--mono);font-size:9px;letter-spacing:.09em;color:var(--ink-3);text-transform:uppercase;margin-top:3px;}
+.act-t{margin-left:auto;text-align:right;}
+.act-tv{font-family:var(--mono);font-size:17px;font-weight:800;line-height:1;}
+.act-tp{font-family:var(--mono);font-size:9px;font-weight:700;color:var(--ink-2);margin-top:4px;}
+.act-c{display:flex;align-items:center;gap:7px;margin-top:11px;}
+.step{width:46px;height:46px;flex:0 0 46px;border:var(--bar) solid var(--ink);border-radius:12px;background:var(--paper);
+  font-size:22px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.step:active{background:var(--ink);color:#fff;}
+.act-in{flex:1;min-width:0;height:46px;border:var(--bar) solid var(--ink);border-radius:12px;background:var(--ice);
+  text-align:center;font-family:var(--mono);font-size:18px;font-weight:800;outline:none;}
+.act-in:focus{background:#fff;box-shadow:3px 3px 0 var(--volt);}
+.act-in::-webkit-outer-spin-button,.act-in::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
+.quick{display:flex;gap:6px;margin-top:8px;}
+.quick button{flex:1;height:36px;border:2px solid var(--ink);border-radius:10px;background:var(--paper);
+  font-family:var(--mono);font-size:11px;font-weight:700;cursor:pointer;}
+.quick button:active{background:var(--flash);}
+.ghost-btn{width:100%;min-height:48px;border:var(--bar) dashed var(--ink);border-radius:14px;background:none;
+  font-size:13px;font-weight:800;color:var(--ink-2);cursor:pointer;margin-bottom:10px;}
 
-    /* ── THEME: DECEMBER — SLEIGH ── */
-    .theme-december{background:linear-gradient(160deg,#050f1a,#0a0f1a);}
-    @keyframes sleigh{0%,100%{transform:translateY(0) rotate(-2deg);}50%{transform:translateY(-4px) rotate(2deg);}}
-    .theme-december .t-vehicle{animation:sleigh 1s ease-in-out infinite;}
-    @keyframes snow-fall{from{background-position:0 0;}to{background-position:20px 20px;}}
-    .theme-december .t-track-bg{background:radial-gradient(circle,#ffffff30 1px,transparent 1px) 0 0/10px 10px;animation:snow-fall 1s linear infinite;}
-    .theme-december .t-track-fill{background:linear-gradient(90deg,#1d4ed8,#3b82f6,#93c5fd);}
+/* ═══ ARCHIVE ═══ */
+.hof{display:flex;align-items:center;gap:12px;border:var(--bar) solid var(--ink);border-radius:14px;
+  background:var(--paper);padding:11px 13px;margin-bottom:9px;}
+.hof.first{background:var(--flash);box-shadow:4px 4px 0 var(--ink);}
+.hof-m{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);}
+.hof-n{font-size:15px;font-weight:900;margin-top:2px;}
+.hof-p{margin-left:auto;font-family:var(--mono);font-size:15px;font-weight:800;}
+.acc{border:var(--bar) solid var(--ink);border-radius:14px;background:var(--paper);margin-bottom:9px;overflow:hidden;}
+.acc-h{width:100%;border:none;background:none;padding:13px 14px;display:flex;align-items:center;gap:9px;cursor:pointer;text-align:left;}
+.acc-t{font-size:14px;font-weight:900;flex:1;}
+.acc-w{font-family:var(--mono);font-size:12px;font-weight:800;}
+.acc-b{display:none;border-top:var(--bar) solid var(--ink);padding:6px 14px 13px;}
+.acc-b.open{display:block;}
+.arow{display:flex;align-items:center;gap:9px;padding:8px 0;border-bottom:1px solid rgba(21,21,58,.12);font-size:13px;}
+.arow:last-of-type{border-bottom:none;}
+.arank{font-family:var(--mono);font-size:12px;font-weight:800;width:22px;color:var(--ink-2);}
+.aname{flex:1;font-weight:800;}
+.apts{font-family:var(--mono);font-weight:800;}
 
-    /* ── THEME: JANUARY — SNOWBOARDING ── */
-    .theme-january{background:linear-gradient(160deg,#08101a,#101824);}
-    @keyframes snowboard{0%,100%{transform:rotate(-5deg);}50%{transform:rotate(5deg);}}
-    .theme-january .t-vehicle{animation:snowboard .6s ease-in-out infinite;}
-    .theme-january .t-track-bg{background:linear-gradient(90deg,#c8d8e8,#d8e8f0);}
-    .theme-january .t-track-fill{background:linear-gradient(90deg,#0369a1,#0ea5e9,#7dd3fc);}
+/* ═══ ME ═══ */
+.me-head{border:var(--bar) solid var(--ink);border-radius:var(--r);background:var(--paper);padding:16px;
+  display:flex;align-items:center;gap:14px;box-shadow:4px 4px 0 var(--ink);}
+.me-av{width:62px;height:62px;flex:0 0 62px;border:var(--bar) solid var(--ink);border-radius:18px;
+  display:flex;align-items:center;justify-content:center;font-size:32px;}
+.me-n{font-size:22px;}
+.me-s{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-top:5px;}
+.row{display:flex;align-items:center;gap:11px;border:var(--bar) solid var(--ink);border-radius:14px;
+  background:var(--paper);padding:9px 12px;margin-bottom:8px;}
+.row-n{flex:1;font-size:14px;font-weight:800;}
+.star{border:none;background:none;font-size:24px;line-height:1;cursor:pointer;color:var(--ink-3);padding:2px 4px;}
+.star.on{color:var(--ink);}
+.jersey{width:6px;height:34px;flex:0 0 6px;border:2px solid var(--ink);border-radius:100px;}
+.trash{border:none;background:none;font-size:17px;cursor:pointer;padding:6px;opacity:.5;}
+.box{border:var(--bar) solid var(--ink);border-radius:var(--r);background:var(--paper);padding:15px;display:flex;flex-direction:column;gap:12px;}
 
-    /* ── THEME: FEBRUARY — LOVE/RUNNING HEARTS ── */
-    .theme-february{background:linear-gradient(160deg,#1a0a10,#200a18);}
-    @keyframes heart-beat{0%,100%{transform:scale(1);}50%{transform:scale(1.3);}}
-    .theme-february .t-vehicle{animation:heart-beat .6s ease-in-out infinite;}
-    .theme-february .t-track-bg{background:repeating-linear-gradient(90deg,#2a0a18 0,#2a0a18 12px,#300a1e 12px,#300a1e 24px);}
-    .theme-february .t-track-fill{background:linear-gradient(90deg,#be185d,#ec4899,#f9a8d4);}
+/* ═══ SHEETS ═══ */
+.sh{display:none;position:fixed;inset:0;background:rgba(21,21,58,.55);z-index:200;align-items:flex-end;justify-content:center;}
+.sh.open{display:flex;}
+.sh-in{width:100%;max-width:480px;max-height:92dvh;overflow-y:auto;background:var(--ice);
+  border:var(--bar) solid var(--ink);border-bottom:none;border-radius:22px 22px 0 0;animation:up .22s cubic-bezier(.2,.9,.3,1);
+  padding-bottom:env(safe-area-inset-bottom);}
+@keyframes up{from{transform:translateY(30px);}}
+.sh-h{position:sticky;top:0;background:var(--ice);z-index:2;padding:18px 18px 14px;
+  border-bottom:var(--bar) solid var(--ink);display:flex;align-items:flex-start;gap:12px;}
+.sh-t{font-size:23px;flex:1;margin-top:4px;}
+.sh-b{padding:16px 18px 24px;display:flex;flex-direction:column;gap:13px;}
 
-    /* ── MEMBER CARDS ── */
-    .cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-    .member-card{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:14px;text-align:center;position:relative;}
-    .member-card.me{border-color:var(--gold);}
-    .me-label{position:absolute;top:8px;left:8px;background:var(--gold);color:#000;font-size:9px;font-weight:900;padding:2px 5px;border-radius:100px;}
-    .card-av{font-size:36px;margin-bottom:5px;}
-    .card-name{font-size:14px;font-weight:800;margin-bottom:2px;}
-    .card-pts{font-size:26px;font-weight:900;}
-    .card-label{font-size:10px;color:var(--muted);font-weight:600;margin-bottom:4px;}
-    .card-today{font-size:11px;font-weight:700;margin-bottom:6px;}
-    .card-badges{display:flex;flex-wrap:wrap;gap:3px;justify-content:center;}
-    .badge{font-size:10px;font-weight:700;padding:2px 6px;border-radius:100px;background:var(--card2);border:1px solid var(--border);}
+.empty{border:var(--bar) dashed var(--ink);border-radius:var(--r);padding:26px 18px;text-align:center;
+  font-size:13px;font-weight:700;color:var(--ink-2);line-height:1.6;}
+.empty i{font-style:normal;font-size:30px;display:block;margin-bottom:9px;}
 
-    /* ── WINNER BANNER ── */
-    .winner-banner{background:linear-gradient(135deg,#2a2010,#1e1a08);border:1.5px solid var(--gold);border-radius:var(--radius);padding:16px;display:flex;align-items:center;gap:14px;}
-    .winner-av{font-size:42px;}.winner-info{flex:1;}
-    .winner-tag{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:2px;}
-    .winner-name{font-size:22px;font-weight:900;}
-    .winner-pts{font-size:13px;color:var(--muted);font-weight:600;}
-    .winner-crown{font-size:36px;}
-
-    /* ── SCORING ── */
-    .scoring-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-    .scoring-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 11px;display:flex;align-items:center;gap:8px;}
-    .scoring-ico{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
-    .scoring-name{font-size:12px;font-weight:800;}.scoring-rate{font-size:10px;color:var(--muted);font-weight:600;}
-
-    /* ── DATE NAVIGATOR ── */
-    .date-nav-bar{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:10px 14px;}
-    .date-nav-btn{background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:16px;width:32px;height:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;font-family:var(--font);}
-    .date-nav-btn:hover:not(:disabled){border-color:var(--accent);color:var(--text);}
-    .date-nav-btn:disabled{opacity:.3;cursor:not-allowed;}
-    .date-nav-label{flex:1;text-align:center;}
-    .date-nav-label.date-today{color:var(--accent);}
-    .date-nav-label .date-nav-full{display:block;font-size:10px;color:var(--muted);font-weight:600;margin-top:1px;}
-    .date-nav-label{font-size:14px;font-weight:800;}
-
-    /* ── MY RESULTS ── */
-    .my-header{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px;}
-    .my-av{width:54px;height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;border:2px solid var(--border);flex-shrink:0;}
-    .my-name{font-size:20px;font-weight:900;}.my-date{font-size:12px;color:var(--muted);font-weight:600;}
-    .activity-card{background:var(--card);border-top:1px solid var(--border);border-right:1px solid var(--border);border-bottom:1px solid var(--border);border-left:3px solid var(--border);border-radius:var(--radius);padding:12px 12px 12px 0;display:flex;align-items:center;margin-bottom:8px;overflow:hidden;}
-    .act-ico-wrap{width:42px;height:42px;border-radius:9px;margin:0 11px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;}
-    .act-info{flex:1;}.act-name{font-size:14px;font-weight:800;}.act-today{font-size:12px;font-weight:700;}
-    .act-counter{display:flex;align-items:center;gap:5px;flex-shrink:0;padding-right:2px;}
-    .cnt-btn{width:32px;height:32px;border-radius:8px;border:none;font-size:18px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:opacity .15s;font-family:var(--font);}
-    .cnt-input{width:62px;background:var(--card2);border:1.5px solid var(--border);border-radius:8px;padding:5px 3px;text-align:center;font-size:15px;font-weight:800;color:var(--text);font-family:var(--font);outline:none;}
-    .cnt-input:focus{border-color:var(--accent);}
-    .summary-bar{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:13px 15px;display:flex;align-items:center;justify-content:space-between;}
-    .sum-left{display:flex;flex-direction:column;gap:4px;}
-    .sum-label{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--muted);}
-    .sum-badges{display:flex;flex-wrap:wrap;gap:4px;}
-    .sum-pts{font-size:30px;font-weight:900;color:var(--gold);}
-    .sum-pts small{font-size:14px;color:var(--muted);}
-
-    /* ── ARCHIVE ── */
-    .hof-row{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:13px 15px;display:flex;align-items:center;gap:12px;margin-bottom:8px;}
-    .hof-medal{font-size:26px;flex-shrink:0;}.hof-info{flex:1;}
-    .hof-month{font-size:13px;font-weight:800;}.hof-name{font-size:12px;color:var(--muted);font-weight:600;}
-    .hof-pts{font-size:16px;font-weight:900;color:var(--gold);}
-    .archive-month{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:10px;overflow:hidden;}
-    .archive-header{padding:13px 15px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;}
-    .archive-header:hover{background:var(--card2);}
-    .archive-title{font-size:14px;font-weight:800;}
-    .archive-winner-chip{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--gold);}
-    .archive-body{padding:0 15px 13px;display:none;}
-    .archive-body.open{display:block;}
-    .archive-member-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border);font-size:13px;}
-    .archive-member-row:last-child{border-bottom:none;}
-    .archive-rank{width:22px;font-weight:800;color:var(--muted);text-align:center;}
-    .archive-av{font-size:18px;}.archive-name{flex:1;font-weight:700;}
-    .archive-pts{font-weight:800;color:var(--gold);}
-
-    /* ── MONTH RECAP MODAL ── */
-    #recap-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.80);z-index:300;align-items:flex-end;justify-content:center;}
-    #recap-modal.open{display:flex;}
-    .recap-sheet{background:var(--nav-bg);border:1px solid var(--border);border-radius:18px 18px 0 0;padding:0;width:100%;max-width:480px;animation:slideUp .22s ease;max-height:88dvh;overflow-y:auto;display:flex;flex-direction:column;}
-    .recap-hero{padding:22px 20px 16px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--nav-bg);z-index:2;}
-    .recap-hero-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
-    .recap-month-label{font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);}
-    .recap-title{font-size:22px;font-weight:900;}
-    .recap-close{background:none;border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:18px;width:32px;height:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font);}
-    .recap-close:hover{border-color:var(--text);color:var(--text);}
-    .recap-body{padding:16px;display:flex;flex-direction:column;gap:14px;}
-
-    /* Winner highlight */
-    .recap-winner{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#2a2010,#1e1a08);border:1.5px solid var(--gold);border-radius:var(--radius);padding:15px;}
-    .recap-winner-av{font-size:40px;}
-    .recap-winner-info{flex:1;}
-    .recap-winner-tag{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:2px;}
-    .recap-winner-name{font-size:20px;font-weight:900;}
-    .recap-winner-pts{font-size:12px;color:var(--muted);font-weight:600;}
-
-    /* Per-person recap cards */
-    .recap-person{background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;}
-    .recap-person.recap-me{border-color:var(--gold);}
-    .recap-person-header{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--border);}
-    .recap-person-av{font-size:28px;}
-    .recap-person-info{flex:1;}
-    .recap-person-name{font-size:15px;font-weight:900;display:flex;align-items:center;gap:6px;}
-    .recap-person-rank{font-size:12px;color:var(--muted);font-weight:600;}
-    .recap-person-pts{font-size:22px;font-weight:900;}
-    .recap-person-pts small{font-size:12px;color:var(--muted);font-weight:600;}
-
-    /* Stats grid */
-    .recap-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
-    .recap-stat{background:var(--card);padding:10px 13px;}
-    .recap-stat-val{font-size:18px;font-weight:900;}
-    .recap-stat-lbl{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-top:1px;}
-
-    /* Activity breakdown */
-    .recap-acts{padding:10px 14px;display:flex;flex-direction:column;gap:6px;}
-    .recap-act-row{display:flex;align-items:center;gap:8px;font-size:12px;}
-    .recap-act-icon{font-size:16px;width:22px;text-align:center;flex-shrink:0;}
-    .recap-act-label{flex:1;font-weight:700;}
-    .recap-act-bar-wrap{width:80px;height:6px;background:var(--border);border-radius:3px;overflow:hidden;flex-shrink:0;}
-    .recap-act-bar{height:100%;border-radius:3px;transition:width .7s ease;}
-    .recap-act-pts{min-width:44px;text-align:right;font-weight:800;color:var(--gold);}
-
-    /* Streak / badges area */
-    .recap-footer{padding:10px 14px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:6px;}
-    .recap-badge{font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px;background:var(--card2);border:1px solid var(--border);}
-
-    /* Section label inside modal */
-    .recap-sec{font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:-4px;}
-
-    /* Archive recap button */
-    .archive-recap-btn{background:var(--card2);border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:11px;font-weight:800;padding:4px 10px;cursor:pointer;font-family:var(--font);letter-spacing:.3px;transition:all .15s;white-space:nowrap;}
-    .archive-recap-btn:hover{border-color:var(--accent);color:var(--text);}
-
-    /* ── FAVOURITE SPORTS ── */
-    .fav-sport-row{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:10px 12px;margin-bottom:8px;}
-    .fav-btn{background:none;border:none;font-size:22px;cursor:pointer;color:var(--muted);line-height:1;padding:2px 4px;transition:all .15s;font-family:var(--font);}
-    .fav-btn:hover{color:var(--gold);transform:scale(1.2);}
-    .fav-btn.fav-on{color:var(--gold);}
-    .acts-divider{display:flex;align-items:center;gap:8px;margin:4px 0 8px;color:var(--muted);}
-    .acts-divider::before,.acts-divider::after{content:'';flex:1;height:1px;background:var(--border);}
-    .acts-divider span{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;}
-
-    /* ── SETTINGS ── */
-    .settings-member{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:11px 13px;display:flex;align-items:center;gap:10px;margin-bottom:8px;}
-    .sm-av{font-size:24px;}.sm-bar{width:3px;height:32px;border-radius:2px;flex-shrink:0;}.sm-info{flex:1;}
-    .sm-name{font-size:13px;font-weight:800;}.sm-pts{font-size:11px;color:var(--muted);font-weight:600;}
-    .del-btn{background:none;border:none;font-size:17px;cursor:pointer;color:var(--muted);padding:5px;transition:color .15s;}
-    .del-btn:hover{color:var(--red);}
-    .add-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:15px;display:flex;flex-direction:column;gap:11px;}
-    .add-title{font-size:14px;font-weight:900;}
-
-    /* ── MODAL ── */
-    #profile-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:300;align-items:flex-end;justify-content:center;}
-    #profile-modal.open{display:flex;}
-    .modal-sheet{background:var(--nav-bg);border:1px solid var(--border);border-radius:18px 18px 0 0;padding:22px;width:100%;max-width:480px;display:flex;flex-direction:column;gap:13px;animation:slideUp .22s ease;max-height:90dvh;overflow-y:auto;}
-    @keyframes slideUp{from{transform:translateY(30px);opacity:0;}}
-    .modal-title{font-size:17px;font-weight:900;}.modal-btns{display:flex;gap:10px;}
-    .ob-member-btn{width:100%;background:var(--card);border:1.5px solid var(--border);border-radius:var(--radius);padding:12px 14px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .15s;font-family:var(--font);color:var(--text);margin-bottom:8px;}
-    .ob-member-btn:hover{border-color:var(--accent);background:var(--card2);}
-    .ob-member-av{font-size:26px;flex-shrink:0;}
-    .ob-member-name{font-size:15px;font-weight:800;flex:1;text-align:left;}
-    .ob-member-pts{font-size:12px;color:var(--gold);font-weight:700;}
-    .ob-member-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
-  </style>
+/* recap */
+.rc{border:var(--bar) solid var(--ink);border-radius:14px;background:var(--paper);overflow:hidden;}
+.rc.me{box-shadow:4px 4px 0 var(--ink);}
+.rc-h{display:flex;align-items:center;gap:10px;padding:11px 13px;border-bottom:var(--bar) solid var(--ink);}
+.rc-n{font-size:15px;font-weight:900;}
+.rc-s{font-family:var(--mono);font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);margin-top:2px;}
+.rc-p{margin-left:auto;font-family:var(--mono);font-size:20px;font-weight:800;}
+.rc-g{display:grid;grid-template-columns:1fr 1fr;}
+.rc-c{padding:9px 13px;border-bottom:1px solid rgba(21,21,58,.12);}
+.rc-c:nth-child(odd){border-right:1px solid rgba(21,21,58,.12);}
+.rc-cv{font-family:var(--mono);font-size:16px;font-weight:800;}
+.rc-cl{font-family:var(--mono);font-size:8px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-2);margin-top:2px;}
+.rc-a{display:flex;align-items:center;gap:9px;padding:6px 13px;}
+.rc-bar{flex:1;height:9px;border:2px solid var(--ink);border-radius:100px;overflow:hidden;background:var(--ice);}
+.rc-bar i{display:block;height:100%;}
+.rc-f{padding:9px 13px;border-top:1px solid rgba(21,21,58,.12);display:flex;flex-wrap:wrap;gap:5px;}
+.bdg{font-size:11px;font-weight:800;padding:3px 9px;border:2px solid var(--ink);border-radius:100px;background:var(--paper);}
+.dl{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid rgba(21,21,58,.12);}
+.dl:last-child{border-bottom:none;}
+</style>
 </head>
 <body>
 
-<div id="loading">
-  <div class="spinner"></div>
-  <div style="color:var(--muted);font-size:14px;font-weight:600">Načítám FitFamily…</div>
-</div>
+<div id="loading"><div class="flag"></div><div class="eyebrow">Načítám startovní listinu</div></div>
 <div id="toast"></div>
 
-<!-- ONBOARDING -->
-<div id="onboarding">
-  <!-- STEP 1: pick existing or new -->
-  <div id="ob-step1" style="display:flex;flex-direction:column;gap:20px">
-    <div class="ob-icon">🏆</div>
-    <div class="ob-title">Vítej v<br/><span>FitFamily!</span></div>
-    <div class="ob-sub">Jsi už součástí rodiny, nebo se přidáváš nově?</div>
-    <div id="ob-existing-list"></div>
-    <div style="display:flex;align-items:center;gap:10px;margin:4px 0">
-      <div style="flex:1;height:1px;background:var(--border)"></div>
-      <div style="color:var(--muted);font-size:12px;font-weight:700">nebo</div>
-      <div style="flex:1;height:1px;background:var(--border)"></div>
-    </div>
-    <button class="btn-secondary" onclick="showObStep2()">➕ Jsem nový člen</button>
+<!-- ═══ ONBOARDING ═══ -->
+<div id="onboard" class="wrap">
+  <div id="ob1" style="display:flex;flex-direction:column;gap:20px">
+    <div class="eyebrow">Rodinná výzva · sezóna běží</div>
+    <div class="disp ob-h">Vítej na<br/><em>startovní čáře</em></div>
+    <div class="ob-p">Každý měsíc je jeden závod. Zapisuješ, co jsi udělal, a sbíráš body.</div>
+    <div id="ob-list"></div>
+    <div class="rule">nebo</div>
+    <button class="btn alt" onclick="obStep(2)">Jsem tu poprvé</button>
   </div>
-
-  <!-- STEP 2: create new member -->
-  <div id="ob-step2" style="display:none;flex-direction:column;gap:20px">
-    <button onclick="showObStep1()" style="background:none;border:none;color:var(--muted);font-size:13px;font-weight:700;cursor:pointer;text-align:left;padding:0;font-family:var(--font)">‹ Zpět</button>
-    <div class="ob-title" style="font-size:26px">Nový člen 👋</div>
-    <div><div class="lbl">Tvoje jméno</div>
-      <input id="ob-name" class="input-field" type="text" placeholder="Např. Táta, Eliška…" maxlength="20"/></div>
-    <div><div class="lbl">Avatar</div><div class="avatar-grid" id="ob-avatars"></div></div>
-    <div><div class="lbl">Barva profilu</div><div class="color-row" id="ob-colors"></div></div>
-    <button class="btn-primary" id="ob-btn" disabled onclick="submitOnboarding()">Jdu do toho! 💪</button>
+  <div id="ob2" style="display:none;flex-direction:column;gap:18px">
+    <button onclick="obStep(1)" class="eyebrow" style="background:none;border:none;text-align:left;padding:0;cursor:pointer">‹ Zpět</button>
+    <div class="disp" style="font-size:30px">Vytvoř si profil</div>
+    <div><span class="lbl">Jméno</span><input id="ob-name" class="field" maxlength="20" placeholder="Táta, Eliška…"/></div>
+    <div><span class="lbl">Avatar</span><div class="avgrid" id="ob-av"></div></div>
+    <div><span class="lbl">Barva dresu</span><div class="colrow" id="ob-col"></div></div>
+    <button class="btn" id="ob-go" disabled onclick="createMe()">Na start 🚦</button>
   </div>
 </div>
 
-<!-- APP -->
-<div id="app">
-  <header class="header">
-    <div class="header-icon">🏆</div>
-    <div class="header-text">
-      <div class="header-title">FitFamily</div>
-      <div class="header-sub" id="header-sub">Rodinná výzva</div>
+<!-- ═══ APP ═══ -->
+<div id="app" class="wrap">
+  <header class="top">
+    <div class="top-mid">
+      <div class="eyebrow" id="top-eye">Závod</div>
+      <div class="disp top-title" id="top-title"></div>
     </div>
-    <div class="user-chip" onclick="openModal()">
-      <div class="chip-av" id="chip-av"></div>
-      <div><div class="chip-name" id="chip-name"></div><div class="chip-pts" id="chip-pts"></div></div>
-    </div>
+    <div class="mnav" id="top-nav"></div>
   </header>
 
-  <div class="month-bar" id="month-bar">
-    <button class="month-nav-btn" id="prev-btn" onclick="changeMonth(-1)">‹</button>
-    <div class="month-label" id="month-label"></div>
-    <span id="current-tag" class="month-current-tag" style="display:none">AKTUÁLNÍ</span>
-    <button class="month-nav-btn" id="next-btn" onclick="changeMonth(1)" disabled>›</button>
-  </div>
-
-  <div class="tabs">
-    <button class="tab-btn active" id="tab-board"    onclick="showTab('board')">🏆 Žebříček</button>
-    <button class="tab-btn"        id="tab-my"       onclick="showTab('my')">📋 Moje výsledky</button>
-    <button class="tab-btn"        id="tab-archive"  onclick="showTab('archive')">📅 Archiv</button>
-    <button class="tab-btn"        id="tab-settings" onclick="showTab('settings')">⚙️</button>
-  </div>
-
-  <!-- BOARD -->
-  <div id="screen-board" class="screen active">
-    <div class="content">
-      <div id="winner-wrap"></div>
-      <div id="theme-race"></div>
-      <div class="cards-grid" id="member-cards"></div>
-      <div>
-        <div class="sec-label">Bodování</div>
-        <div class="scoring-grid">
-          <div class="scoring-item"><div class="scoring-ico" style="background:#1e2a1e">👟</div><div><div class="scoring-name" style="color:#4ade80">Kroky</div><div class="scoring-rate">0.01 b/krok</div></div></div>
-          <div class="scoring-item"><div class="scoring-ico" style="background:#2a1e1e">🦵</div><div><div class="scoring-name" style="color:#f97316">Dřepy</div><div class="scoring-rate">1.5 b/opak.</div></div></div>
-          <div class="scoring-item"><div class="scoring-ico" style="background:#2a1a10">💪</div><div><div class="scoring-name" style="color:#fb923c">Kliky</div><div class="scoring-rate">2 b/opak.</div></div></div>
-          <div class="scoring-item"><div class="scoring-ico" style="background:#1e2a2a">🚴</div><div><div class="scoring-name" style="color:#22d3ee">Kolo</div><div class="scoring-rate">10 b/km</div></div></div>
-          <div class="scoring-item"><div class="scoring-ico" style="background:#2a221e">🏃</div><div><div class="scoring-name" style="color:#fbbf24">Běh</div><div class="scoring-rate">15 b/km</div></div></div>
-          <div class="scoring-item"><div class="scoring-ico" style="background:#0c2030">🏊</div><div><div class="scoring-name" style="color:#38bdf8">Plavání</div><div class="scoring-rate">20 b/km</div></div></div>
-          <div class="scoring-item"><div class="scoring-ico" style="background:#1e1030">🏋️</div><div><div class="scoring-name" style="color:#c084fc">Silový trénink</div><div class="scoring-rate">3 b/min</div></div></div>
-          <div class="scoring-item"><div class="scoring-ico" style="background:#2a1828">🧘</div><div><div class="scoring-name" style="color:#f9a8d4">Pilates / Barre</div><div class="scoring-rate">2 b/min</div></div></div>
-          <div class="scoring-item"><div class="scoring-ico" style="background:#1a2a08">🥋</div><div><div class="scoring-name" style="color:#a3e635">Aikido</div><div class="scoring-rate">3 b/min</div></div></div>
-        </div>
+  <div class="scroll">
+    <section id="s-race" class="screen on">
+      <div id="race-banner"></div>
+      <div id="race-hero"></div>
+      <div class="sec">Průběžné pořadí</div>
+      <div id="race-tower"></div>
+      <div id="race-today"></div>
+      <div class="rates" id="rates">
+        <div class="rates-h" onclick="document.getElementById('rates').classList.toggle('open')">
+          <span>Za co jsou body</span><span>⌄</span></div>
+        <div class="rates-b" id="rates-b"></div>
       </div>
-    </div>
+    </section>
+
+    <section id="s-grid" class="screen">
+      <div class="seg">
+        <button id="g-me" class="on" onclick="setGridMode('me')">Můj list</button>
+        <button id="g-fam" onclick="setGridMode('fam')">Celá rodina</button>
+      </div>
+      <div id="grid-stats"></div>
+      <div id="grid-body"></div>
+    </section>
+
+    <section id="s-log" class="screen">
+      <div id="log-date"></div>
+      <div id="log-tally"></div>
+      <div id="log-acts"></div>
+    </section>
+
+    <section id="s-archive" class="screen">
+      <div class="sec">Vítězové sezóny</div>
+      <div id="hof"></div>
+      <div class="sec">Závod po závodě</div>
+      <div id="acc"></div>
+    </section>
+
+    <section id="s-me" class="screen">
+      <div id="me-head"></div>
+      <div class="sec">Moje sporty</div>
+      <div style="font-size:12px;color:var(--ink-2);font-weight:600;margin-top:-8px">Označené se při zápisu ukážou nahoře.</div>
+      <div id="fav"></div>
+      <div class="sec">Rodina</div>
+      <div id="mem"></div>
+      <div class="box">
+        <div class="disp" style="font-size:17px">Přidat člena</div>
+        <div><span class="lbl">Jméno</span><input id="nw-name" class="field" maxlength="20" placeholder="Jméno…"/></div>
+        <div><span class="lbl">Avatar</span><div class="avgrid" id="nw-av"></div></div>
+        <div><span class="lbl">Barva dresu</span><div class="colrow" id="nw-col"></div></div>
+        <button class="btn" id="nw-go" disabled onclick="addMember()">Přidat člena</button>
+      </div>
+      <button class="btn alt" onclick="switchUser()">Přepnout člena na tomhle mobilu</button>
+    </section>
   </div>
 
-  <!-- MY RESULTS -->
-  <div id="screen-my" class="screen">
-    <div class="content">
-      <div class="my-header">
-        <div class="my-av" id="my-av-big"></div>
-        <div style="flex:1"><div class="my-name" id="my-name-big"></div></div>
-      </div>
-      <div class="date-nav-bar" id="my-date-nav"></div>
-      <div id="activity-rows"></div>
-      <div class="summary-bar">
-        <div class="sum-left">
-          <div class="sum-label">Body za dnešek</div>
-          <div class="sum-badges" id="sum-badges"></div>
-        </div>
-        <div class="sum-pts"><small>+</small><span id="total-pts">0</span><small> b</small></div>
-      </div>
-      <button class="btn-primary" id="save-btn" onclick="saveLog()">💾 Uložit výsledky</button>
-    </div>
-  </div>
-
-  <!-- ARCHIVE -->
-  <div id="screen-archive" class="screen">
-    <div class="content">
-      <div class="sec-label">Síň slávy — Vítězové měsíců</div>
-      <div id="hof-list"></div>
-      <div class="sec-label" style="margin-top:8px">Výsledky podle měsíce</div>
-      <div id="archive-list"></div>
-    </div>
-  </div>
-
-  <!-- SETTINGS -->
-  <div id="screen-settings" class="screen">
-    <div class="content">
-      <div class="sec-label">Oblíbené sporty</div>
-      <div id="fav-sports-list"></div>
-      <div class="sec-label" style="margin-top:4px">Členové rodiny</div>
-      <div id="settings-members"></div>
-      <div class="add-section">
-        <div class="add-title">Přidat nového člena</div>
-        <div><div class="lbl">Jméno</div><input id="new-name" class="input-field" type="text" placeholder="Jméno…" maxlength="20" oninput="checkAddBtn()"/></div>
-        <div><div class="lbl">Avatar</div><div class="avatar-grid" id="new-avatars"></div></div>
-        <div><div class="lbl">Barva</div><div class="color-row" id="new-colors"></div></div>
-        <button class="btn-primary" id="add-btn" disabled onclick="addMember()">Přidat člena</button>
-      </div>
-    </div>
-  </div>
+  <nav class="nav">
+    <button class="nb on" id="n-race" onclick="go('race')"><i>🏁</i>Závod</button>
+    <button class="nb" id="n-grid" onclick="go('grid')"><i>📆</i>Kalendář</button>
+    <div class="nb-fab"><button class="fab" id="n-log" onclick="go('log')" aria-label="Zapsat trénink">+</button></div>
+    <button class="nb" id="n-archive" onclick="go('archive')"><i>🏅</i>Archiv</button>
+    <button class="nb" id="n-me" onclick="go('me')"><i>👤</i>Já</button>
+  </nav>
 </div>
 
-<!-- MONTHLY RECAP MODAL -->
-<div id="recap-modal">
-  <div class="recap-sheet">
-    <div class="recap-hero">
-      <div class="recap-hero-top">
-        <div>
-          <div class="recap-month-label" id="recap-month-label">Rekapitulace</div>
-          <div class="recap-title" id="recap-title"></div>
-        </div>
-        <button class="recap-close" onclick="closeRecap()">✕</button>
-      </div>
-    </div>
-    <div class="recap-body" id="recap-body"></div>
-  </div>
-</div>
+<!-- ═══ SHEETS ═══ -->
+<div class="sh" id="sh-day"><div class="sh-in">
+  <div class="sh-h"><div style="flex:1"><div class="eyebrow" id="day-eye"></div><div class="disp sh-t" id="day-t"></div></div>
+    <button class="icon-btn" onclick="closeSh('sh-day')">✕</button></div>
+  <div class="sh-b" id="day-b"></div></div></div>
 
-<!-- PROFILE MODAL -->
-<div id="profile-modal">
-  <div class="modal-sheet">
-    <div class="modal-title">Upravit profil</div>
-    <div><div class="lbl">Jméno</div><input id="edit-name" class="input-field" type="text" maxlength="20"/></div>
-    <div><div class="lbl">Avatar</div><div class="avatar-grid" id="edit-avatars"></div></div>
-    <div><div class="lbl">Barva</div><div class="color-row" id="edit-colors"></div></div>
-    <div class="modal-btns">
-      <button class="btn-secondary" onclick="closeModal()">Zrušit</button>
-      <button class="btn-primary"   onclick="saveProfile()">Uložit</button>
-    </div>
-  </div>
-</div>
+<div class="sh" id="sh-recap"><div class="sh-in">
+  <div class="sh-h"><div style="flex:1"><div class="eyebrow" id="rec-eye"></div><div class="disp sh-t" id="rec-t"></div></div>
+    <button class="icon-btn" onclick="closeSh('sh-recap')">✕</button></div>
+  <div class="sh-b" id="rec-b"></div></div></div>
+
+<div class="sh" id="sh-prof"><div class="sh-in">
+  <div class="sh-h"><div style="flex:1"><div class="eyebrow">Profil</div><div class="disp sh-t">Upravit</div></div>
+    <button class="icon-btn" onclick="closeSh('sh-prof')">✕</button></div>
+  <div class="sh-b">
+    <div><span class="lbl">Jméno</span><input id="ed-name" class="field" maxlength="20"/></div>
+    <div><span class="lbl">Avatar</span><div class="avgrid" id="ed-av"></div></div>
+    <div><span class="lbl">Barva dresu</span><div class="colrow" id="ed-col"></div></div>
+    <button class="btn" onclick="saveProfile()">Uložit</button>
+  </div></div></div>
 
 <script>
-// ── CONFIG ──────────────────────────────────────────────
-const SUPABASE_URL      = 'https://wkdozysiczbrllgsxgir.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndrZG96eXNpY3picmxsZ3N4Z2lyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxNzExMzIsImV4cCI6MjA4ODc0NzEzMn0.9RQsoIXjnGmLrgz2JBSF0hWTVbqhAhIFfCa_am7M9xU';
+/* ══ CONFIG ══ */
+const SUPABASE_URL='https://wkdozysiczbrllgsxgir.supabase.co';
+const SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndrZG96eXNpY3picmxsZ3N4Z2lyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMxNzExMzIsImV4cCI6MjA4ODc0NzEzMn0.9RQsoIXjnGmLrgz2JBSF0hWTVbqhAhIFfCa_am7M9xU';
 
-// ── MONTH THEMES ────────────────────────────────────────
-// month index 0=Jan … 11=Dec
-const THEMES = [
-  // Jan
-  { cls:'theme-january',  vehicle:'🏂', label:'Snowboard Závod',   color:'#0ea5e9',  barBg:'rgba(255,255,255,.15)', titleColor:'#7dd3fc' },
-  // Feb
-  { cls:'theme-february', vehicle:'❤️',  label:'Valentýnský sprint', color:'#ec4899', barBg:'rgba(255,255,255,.08)', titleColor:'#f9a8d4' },
-  // Mar
-  { cls:'theme-march',    vehicle:'🏎️',  label:'Formule 1',          color:'#ef4444', barBg:'rgba(255,255,255,.1)',  titleColor:'#fca5a5',
-    extra: `<span class="smoke-puff">💨</span><span class="smoke-puff">💨</span>` },
-  // Apr
-  { cls:'theme-april',    vehicle:'🎢', label:'Horská dráha',       color:'#a855f7', barBg:'rgba(255,255,255,.08)', titleColor:'#d8b4fe' },
-  // May
-  { cls:'theme-may',      vehicle:'🚲', label:'Cyklistický závod',  color:'#22c55e', barBg:'rgba(255,255,255,.1)',  titleColor:'#86efac' },
-  // Jun
-  { cls:'theme-june',     vehicle:'🏊', label:'Plavecký maratón',   color:'#06b6d4', barBg:'rgba(255,255,255,.08)', titleColor:'#67e8f9' },
-  // Jul
-  { cls:'theme-july',     vehicle:'🚀', label:'Vesmírný závod',     color:'#8b5cf6', barBg:'rgba(255,255,255,.05)', titleColor:'#c4b5fd' },
-  // Aug
-  { cls:'theme-august',   vehicle:'🏄', label:'Surfový šampionát',  color:'#0891b2', barBg:'rgba(255,255,255,.1)',  titleColor:'#67e8f9' },
-  // Sep
-  { cls:'theme-september',vehicle:'🥾', label:'Horský trek',        color:'#d97706', barBg:'rgba(255,255,255,.08)', titleColor:'#fcd34d' },
-  // Oct
-  { cls:'theme-october',  vehicle:'🧙', label:'Čarodějnický let',   color:'#ea580c', barBg:'rgba(255,255,255,.06)', titleColor:'#fed7aa' },
-  // Nov
-  { cls:'theme-november', vehicle:'🎈', label:'Balonová regata',    color:'#c026d3', barBg:'rgba(255,255,255,.07)', titleColor:'#f0abfc' },
-  // Dec
-  { cls:'theme-december', vehicle:'🎅', label:'Sáňky Santa Clause', color:'#3b82f6', barBg:'rgba(255,255,255,.1)',  titleColor:'#bfdbfe' },
-];
-
-// ── CONSTANTS ───────────────────────────────────────────
-const AVATARS=['🦑','🐡','🦊','🐼','🦁','🐯','🐻','🦄','🐸','🐧','🦋','🐙','🦖','🦕','🦧','🦥','🦞','🐬','🦩','🐲','🤖','🧙','🦸','🦹'];
-const COLORS=['#ffd700','#f97316','#4ade80','#22d3ee','#7c6af7','#ec4899','#fbbf24','#60a5fa'];
+/* ══ ACTIVITIES — single source of truth ══ */
 const ACTS=[
-  {key:'steps',   label:'Kroky',          icon:'👟',pts:.01, step:100, max:50000,isFloat:false,color:'#4ade80',bg:'#1e2a1e'},
-  {key:'drepy',   label:'Dřepy',          icon:'🦵',pts:1.5, step:5,   max:500,  isFloat:false,color:'#f97316',bg:'#2a1e1e'},
-  {key:'kliky',   label:'Kliky',          icon:'💪',pts:2,   step:5,   max:500,  isFloat:false,color:'#fb923c',bg:'#2a1a10'},
-  {key:'bike_km', label:'Kolo',           icon:'🚴',pts:10,  step:.5,  max:200,  isFloat:true, color:'#22d3ee',bg:'#1e2a2a'},
-  {key:'run_km',  label:'Běh',            icon:'🏃',pts:15,  step:.5,  max:100,  isFloat:true, color:'#fbbf24',bg:'#2a221e'},
-  {key:'swim_km', label:'Plavání',        icon:'🏊',pts:20,  step:.5,  max:50,   isFloat:true, color:'#38bdf8',bg:'#0c2030'},
-  {key:'silovy',  label:'Silový trénink', icon:'🏋️',pts:3,   step:5,   max:180,  isFloat:false,color:'#c084fc',bg:'#1e1030'},
-  {key:'pilates', label:'Pilates / Barre',icon:'🧘',pts:2,   step:5,   max:180,  isFloat:false,color:'#f9a8d4',bg:'#2a1828'},
-  {key:'aikido',  label:'Aikido',         icon:'🥋',pts:3,   step:5,   max:180,  isFloat:false,color:'#a3e635',bg:'#1a2a08'},
+ {key:'steps',   label:'Kroky',           icon:'👟', pts:.01, step:500, quick:[1000,3000,5000], max:60000, dec:0, unit:'kroků', rate:'0,01 b / krok', color:'#00C48C'},
+ {key:'drepy',   label:'Dřepy',           icon:'🦵', pts:1.5, step:5,   quick:[10,20,50],       max:1000,  dec:0, unit:'opak.', rate:'1,5 b / opak.', color:'#FF8A3D'},
+ {key:'kliky',   label:'Kliky',           icon:'💪', pts:2,   step:5,   quick:[10,20,50],       max:1000,  dec:0, unit:'opak.', rate:'2 b / opak.',   color:'#FF6B35'},
+ {key:'bike_km', label:'Kolo',            icon:'🚴', pts:10,  step:.5,  quick:[5,10,20],        max:300,   dec:1, unit:'km',    rate:'10 b / km',     color:'#00B4D8'},
+ {key:'run_km',  label:'Běh',             icon:'🏃', pts:15,  step:.5,  quick:[2,5,10],         max:100,   dec:1, unit:'km',    rate:'15 b / km',     color:'#FFC300'},
+ {key:'swim_km', label:'Plavání',         icon:'🏊', pts:20,  step:.5,  quick:[.5,1,2],         max:50,    dec:1, unit:'km',    rate:'20 b / km',     color:'#3B2BF5'},
+ {key:'silovy',  label:'Silový trénink',  icon:'🏋️', pts:3,   step:5,   quick:[15,30,60],       max:240,   dec:0, unit:'min',   rate:'3 b / min',     color:'#9B5DE5'},
+ {key:'pilates', label:'Pilates / Barre', icon:'🧘', pts:2,   step:5,   quick:[15,30,60],       max:240,   dec:0, unit:'min',   rate:'2 b / min',     color:'#FF3D6E'},
+ {key:'aikido',  label:'Aikido',          icon:'🥋', pts:3,   step:5,   quick:[30,60,90],       max:240,   dec:0, unit:'min',   rate:'3 b / min',     color:'#7CB518'},
 ];
-const MONTH_NAMES=['Leden','Únor','Březen','Duben','Květen','Červen','Červenec','Srpen','Září','Říjen','Listopad','Prosinec'];
+const ACT=Object.fromEntries(ACTS.map(a=>[a.key,a]));
 
-// ── STATE ───────────────────────────────────────────────
-let members=[],logs=[];
-let myId=localStorage.getItem('ff_my_id');
-let vals={steps:0,drepy:0,kliky:0,bike_km:0,run_km:0,swim_km:0,silovy:0,pilates:0,aikido:0};
-let editDate=''; // set on first use in renderMy
-let favSports=JSON.parse(localStorage.getItem('ff_fav_sports')||'[]');
-const nowMonth=()=>new Date().toISOString().slice(0,7);
-let viewMonth=nowMonth();
-let obAv=AVATARS[0],obCol=COLORS[0],newAv=AVATARS[0],newCol=COLORS[0],editAv='',editCol='';
+/* month = a race */
+const RACES=[
+ {veh:'🏂',name:'Snowboardový sjezd', tint:'#B8E4FF'},
+ {veh:'❤️',name:'Valentýnský sprint', tint:'#FFC9DC'},
+ {veh:'🏎️',name:'Velká cena',         tint:'#FFB3B3'},
+ {veh:'🎢',name:'Horská dráha',        tint:'#E0C9FF'},
+ {veh:'🚲',name:'Cyklistický závod',   tint:'#BEF2C8'},
+ {veh:'🏊',name:'Plavecký maratón',    tint:'#B5ECF7'},
+ {veh:'🚀',name:'Vesmírný závod',      tint:'#CFC9FF'},
+ {veh:'🏄',name:'Surfový šampionát',   tint:'#AEE9F0'},
+ {veh:'🥾',name:'Horský trek',         tint:'#F2DFA8'},
+ {veh:'🧙',name:'Čarodějnický let',    tint:'#FFD2A8'},
+ {veh:'🎈',name:'Balonová regata',     tint:'#F6C7F2'},
+ {veh:'🎅',name:'Sáně Santa Clause',   tint:'#C6D8FF'},
+];
+const AVATARS=['🦑','🐡','🦊','🐼','🦁','🐯','🐻','🦄','🐸','🐧','🦋','🐙','🦖','🦕','🦧','🦥','🦞','🐬','🦩','🐲','🤖','🧙','🦸','🦹'];
+const COLORS=['#FFE24B','#FF8A3D','#00C48C','#00B4D8','#3B2BF5','#FF3D6E','#9B5DE5','#7CB518'];
+const MONTHS=['Leden','Únor','Březen','Duben','Květen','Červen','Červenec','Srpen','Září','Říjen','Listopad','Prosinec'];
+const DOW=['Po','Út','St','Čt','Pá','So','Ne'];
 
-// ── SUPABASE ────────────────────────────────────────────
-async function sb(path,opts={}){
-  const r=await fetch(SUPABASE_URL+'/rest/v1/'+path,{...opts,headers:{'apikey':SUPABASE_ANON_KEY,'Authorization':'Bearer '+SUPABASE_ANON_KEY,'Content-Type':'application/json','Prefer':opts.prefer||'',...(opts.headers||{})}});
-  if(!r.ok)throw new Error(await r.text());
+/* ══ STATE ══ */
+let members=[],logs=[],myId=localStorage.getItem('ff_my_id');
+let tab='race',viewMonth='',editDate='',gridMode='me',showAll=false;
+let vals={};ACTS.forEach(a=>vals[a.key]=0);
+let favs=JSON.parse(localStorage.getItem('ff_favs')||'[]');
+let sel={ob:{a:AVATARS[0],c:COLORS[0]},nw:{a:AVATARS[0],c:COLORS[0]},ed:{a:'',c:''}};
+let dirty=false,saveTimer=null,pollTimer=null;
+
+/* ══ DATA ══ */
+async function sb(path,o={}){
+  const r=await fetch(SUPABASE_URL+'/rest/v1/'+path,{...o,headers:{apikey:SUPABASE_ANON_KEY,
+    Authorization:'Bearer '+SUPABASE_ANON_KEY,'Content-Type':'application/json',Prefer:o.prefer||'',...(o.headers||{})}});
+  if(!r.ok)throw new Error((await r.text()).slice(0,120));
   const t=await r.text();return t?JSON.parse(t):null;
 }
 async function loadAll(){
-  [members,logs]=await Promise.all([sb('members?order=created_at.asc'),sb('logs?order=date.desc&limit=2000')]);
+  const [m,l]=await Promise.all([sb('members?order=created_at.asc'),sb('logs?order=date.desc&limit=5000')]);
+  members=m||[];logs=l||[];
 }
 
-// ── UTILS ───────────────────────────────────────────────
-const today   =()=>new Date().toISOString().slice(0,10);
-const byId    =id=>members.find(m=>m.id===id);
-const todayLog=id=>logs.find(l=>l.member_id===id&&l.date===today());
-const monthPts=(id,ym)=>logs.filter(l=>l.member_id===id&&l.date.startsWith(ym)).reduce((s,l)=>s+(parseFloat(l.points)||0),0);
-const calcPts =v=>v.steps*.01+(v.drepy||0)*1.5+(v.kliky||0)*2+v.bike_km*10+v.run_km*15+v.swim_km*20+(v.silovy||0)*3+(v.pilates||0)*2+(v.aikido||0)*3;
-function allMonths(){const s=new Set(logs.map(l=>l.date.slice(0,7)));s.add(nowMonth());return[...s].sort().reverse();}
-function monthWinner(ym){
-  if(!members.length)return null;
-  let best=null,bestP=-1;
-  for(const m of members){const p=monthPts(m.id,ym);if(p>bestP){bestP=p;best=m;}}
-  return bestP>0?{member:best,pts:bestP}:null;
+/* ══ UTILS ══ */
+const pad=n=>String(n).padStart(2,'0');
+const today=()=>{const d=new Date();return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;};
+const nowM=()=>today().slice(0,7);
+const byId=i=>members.find(m=>m.id===i);
+const num=v=>parseFloat(v)||0;
+const calc=v=>ACTS.reduce((s,a)=>s+num(v[a.key])*a.pts,0);
+const logOf=(m,d)=>logs.find(l=>l.member_id===m&&l.date===d);
+const ptsOf=l=>l?(l.points!=null?num(l.points):calc(l)):0;
+const dayPts=(m,d)=>ptsOf(logOf(m,d));
+const monthPts=(m,ym)=>logs.filter(l=>l.member_id===m&&l.date.startsWith(ym)).reduce((s,l)=>s+ptsOf(l),0);
+const fmtM=ym=>{const[y,m]=ym.split('-');return MONTHS[+m-1]+' '+y;};
+const race=ym=>RACES[+ym.split('-')[1]-1];
+const daysIn=ym=>{const[y,m]=ym.split('-').map(Number);return new Date(y,m,0).getDate();};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fv=(a,v)=>a.dec?num(v).toFixed(a.dec):Math.round(num(v)).toLocaleString('cs-CZ');
+const nf=n=>Math.round(n).toLocaleString('cs-CZ');
+
+function rgb(h){h=String(h||'#888').replace('#','');if(h.length===3)h=h.split('').map(c=>c+c).join('');
+  return [0,2,4].map(i=>parseInt(h.slice(i,i+2),16)||0);}
+function onColor(hex,alpha=1){
+  const [r,g,b]=rgb(hex).map(c=>Math.round(255+(c-255)*alpha));
+  return (0.299*r+0.587*g+0.114*b)>150?'var(--ink)':'#fff';
 }
-function formatMonth(ym){const[y,m]=ym.split('-');return MONTH_NAMES[parseInt(m)-1]+' '+y;}
-function longDate(){return new Date().toLocaleDateString('cs-CZ',{weekday:'long',day:'numeric',month:'long'});}
-function themeForMonth(ym){const m=parseInt(ym.split('-')[1])-1;return THEMES[m];}
+const tint=(hex,a)=>{const[r,g,b]=rgb(hex);return `rgba(${r},${g},${b},${a})`;};
 
-function toast(msg,ok=true){
-  const el=document.getElementById('toast');
-  el.textContent=msg;el.style.background=ok?'#1a2e1a':'#2e1a1a';el.style.borderColor=ok?'#4ade80':'#e05c5c';
-  el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2300);
+function monthList(){
+  const all=logs.map(l=>l.date.slice(0,7)).sort();
+  let [y,m]=(all[0]||nowM()).split('-').map(Number);
+  const [cy,cm]=nowM().split('-').map(Number),out=[];
+  while(y<cy||(y===cy&&m<=cm)){out.push(`${y}-${pad(m)}`);if(++m>12){m=1;y++;}}
+  return out.reverse();
 }
-
-// ── MONTH NAV ───────────────────────────────────────────
-function changeMonth(dir){
-  const months=allMonths();
-  const idx=months.indexOf(viewMonth);
-  const ni=idx+(-dir);
-  if(ni>=0&&ni<months.length){viewMonth=months[ni];updateMonthBar();renderBoard();}
+function winnerOf(ym){let b=null,p=0;members.forEach(m=>{const x=monthPts(m.id,ym);if(x>p){p=x;b=m;}});return b?{m:b,p}:null;}
+function toast(msg,bad){
+  const t=document.getElementById('toast');t.textContent=msg;t.className=bad?'show bad':'show';
+  clearTimeout(t._t);t._t=setTimeout(()=>t.className='',2400);
 }
-function updateMonthBar(){
-  const months=allMonths();
-  const idx=months.indexOf(viewMonth);
-  const isCur=viewMonth===nowMonth();
-  const theme=themeForMonth(viewMonth);
-
-  document.getElementById('month-label').textContent=formatMonth(viewMonth);
-  document.getElementById('current-tag').style.display=isCur?'inline-block':'none';
-  document.getElementById('prev-btn').disabled=(idx>=months.length-1);
-  document.getElementById('next-btn').disabled=(idx<=0);
-  document.getElementById('header-sub').textContent=formatMonth(viewMonth);
-
-  // Style the month bar with theme colour
-  const bar=document.getElementById('month-bar');
-  bar.style.background=`linear-gradient(90deg, ${theme.color}22, ${theme.color}11)`;
-  bar.style.borderBottomColor=theme.color+'44';
-  document.getElementById('month-label').style.color=theme.titleColor;
+function dLabel(d){
+  if(d===today())return 'Dnes';
+  const dt=new Date(d+'T12:00:00');
+  const diff=Math.round((new Date(today()+'T12:00:00')-dt)/864e5);
+  if(diff===1)return 'Včera';
+  return dt.toLocaleDateString('cs-CZ',{weekday:'long',day:'numeric',month:'long'});
 }
+const dFull=d=>new Date(d+'T12:00:00').toLocaleDateString('cs-CZ',{day:'numeric',month:'long',year:'numeric'});
 
-// ── TABS ────────────────────────────────────────────────
-function showTab(name){
-  ['board','my','archive','settings'].forEach(t=>{
-    document.getElementById('screen-'+t).classList.toggle('active',t===name);
-    document.getElementById('tab-'+t).classList.toggle('active',t===name);
+function streaks(mid,ym){
+  const set=new Set(logs.filter(l=>l.member_id===mid&&ptsOf(l)>0).map(l=>l.date));
+  let best=0,run=0;
+  for(let d=1;d<=daysIn(ym);d++){if(set.has(`${ym}-${pad(d)}`)){run++;best=Math.max(best,run);}else run=0;}
+  let cur=0,p=new Date(today()+'T12:00:00');
+  while(cur<400){const ds=`${p.getFullYear()}-${pad(p.getMonth()+1)}-${pad(p.getDate())}`;
+    if(set.has(ds)){cur++;p.setDate(p.getDate()-1);}else break;}
+  return {best,cur};
+}
+const dayWord=n=>n===1?'den':(n>=2&&n<=4?'dny':'dní');
+
+/* ══ NAV ══ */
+function go(name){
+  if(tab==='log'&&name!=='log')flush();
+  tab=name;
+  ['race','grid','log','archive','me'].forEach(t=>{
+    document.getElementById('s-'+t).classList.toggle('on',t===name);
+    const b=document.getElementById('n-'+t);if(b)b.classList.toggle('on',t===name);
   });
-  if(name==='board')    renderBoard();
-  if(name==='my')       {editDate='';renderMy();}
-  if(name==='archive')  renderArchive();
-  if(name==='settings') renderSettings();
+  document.querySelector('.scroll').scrollTop=0;
+  render();
 }
-function updateChip(){
-  const me=byId(myId);if(!me)return;
-  document.getElementById('chip-av').textContent  =me.avatar;
-  document.getElementById('chip-name').textContent=me.name;
-  document.getElementById('chip-pts').textContent =Math.round(monthPts(myId,nowMonth()))+'b';
+function render(){
+  renderTop();
+  if(tab==='race')renderRace();
+  if(tab==='grid')renderGrid();
+  if(tab==='log')renderLog();
+  if(tab==='archive')renderArchive();
+  if(tab==='me')renderMe();
+}
+function renderTop(){
+  const eye=document.getElementById('top-eye'),ttl=document.getElementById('top-title'),nav=document.getElementById('top-nav');
+  if(tab==='race'||tab==='grid'){
+    const ms=monthList(),i=ms.indexOf(viewMonth);
+    eye.textContent=tab==='race'?(viewMonth===nowM()?'Závod běží':'Uzavřený závod'):'Tréninkový list';
+    ttl.textContent=fmtM(viewMonth);
+    nav.innerHTML=`<button onclick="shiftMonth(-1)" ${i>=ms.length-1?'disabled':''} aria-label="Předchozí měsíc">‹</button>
+                   <button onclick="shiftMonth(1)" ${i<=0?'disabled':''} aria-label="Další měsíc">›</button>`;
+  }else{
+    const map={log:['Zápis','Můj trénink'],archive:['Historie','Archiv'],me:['Nastavení','Já']};
+    eye.textContent=map[tab][0];ttl.textContent=map[tab][1];nav.innerHTML='';
+  }
+}
+function shiftMonth(d){
+  const ms=monthList(),i=ms.indexOf(viewMonth),n=i-d;
+  if(n>=0&&n<ms.length){viewMonth=ms[n];render();}
 }
 
-// ── LEADERBOARD (THEMED) ────────────────────────────────
-function renderBoard(){
-  updateMonthBar();
-  const theme=themeForMonth(viewMonth);
-  const isCur=viewMonth===nowMonth();
+/* ══ RACE ══ */
+function renderRace(){
+  const r=race(viewMonth),cur=viewMonth===nowM();
+  document.getElementById('race-banner').innerHTML=`
+    <div class="banner" style="background:${r.tint}">
+      <div class="banner-veh">${r.veh}</div>
+      <div><div class="disp banner-name">${r.name}</div>
+        <div class="banner-sub">${cur?`kolo ${new Date().getDate()} z ${daysIn(viewMonth)}`:'závod dokončen'}</div></div>
+    </div>`;
+
   const sorted=[...members].sort((a,b)=>monthPts(b.id,viewMonth)-monthPts(a.id,viewMonth));
-  const maxP=monthPts(sorted[0]?.id,viewMonth)||1;
+  const max=Math.max(1,monthPts(sorted[0]?.id,viewMonth));
+  const me=byId(myId),idx=sorted.findIndex(m=>m.id===myId);
 
-  // Winner banner for past months
-  const ww=document.getElementById('winner-wrap');
-  if(!isCur){
-    const w=monthWinner(viewMonth);
-    ww.innerHTML=w?`<div class="winner-banner">
-      <div class="winner-av">${w.member.avatar}</div>
-      <div class="winner-info">
-        <div class="winner-tag">🏆 Vítěz · ${formatMonth(viewMonth)}</div>
-        <div class="winner-name">${w.member.name}</div>
-        <div class="winner-pts">${Math.round(w.pts)} bodů</div>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
-        <div style="font-size:36px">👑</div>
-        <button class="archive-recap-btn" onclick="openRecap('${viewMonth}')">📊 Rekapitulace</button>
-      </div></div>`:'';
-  }else{ww.innerHTML='';}
-
-  // Themed race track
-  const rows=sorted.map((m,i)=>{
-    const pts=monthPts(m.id,viewMonth);
-    const pct=Math.max(3,Math.round(pts/maxP*100));
-    const medal=i===0?'🥇':i===1?'🥈':i===2?'🥉':`#${i+1}`;
-    return `<div class="t-row">
-      <div class="t-medal">${medal}</div>
-      <div class="t-av">${m.avatar}</div>
-      <div class="t-info">
-        <div class="t-name">${m.name}${m.id===myId?' <span class="me-tag">JÁ</span>':''}${i===0&&pts>0?' 👑':''}</div>
-        <div class="t-track">
-          <div class="t-track-bg"></div>
-          <div class="t-track-fill" style="width:${pct}%">
-            ${theme.extra||''}
-            <span class="t-vehicle">${theme.vehicle}</span>
+  if(me&&idx>-1){
+    const myP=monthPts(myId,viewMonth),st=streaks(myId,viewMonth);
+    const todayP=cur?dayPts(myId,today()):0;
+    let gap;
+    if(idx===0&&sorted.length>1){
+      gap=`🥇 Vedeš o <b>${nf(myP-monthPts(sorted[1].id,viewMonth))} b</b> před ${esc(sorted[1].name)}`;
+    }else if(idx>0){
+      const a=sorted[idx-1];
+      gap=`${a.avatar} Na ${esc(a.name)} ztrácíš <b>${nf(monthPts(a.id,viewMonth)-myP)} b</b>`;
+    }else gap='Zapiš první trénink a rozjeď to.';
+    document.getElementById('race-hero').innerHTML=`
+      <div class="hero">
+        <div class="hero-top">
+          <div>
+            <div class="eyebrow">${cur?'Moje body dnes':'Moje body za měsíc'}</div>
+            <div class="disp fig hero-fig">${nf(cur?todayP:myP)}<small>b</small></div>
+          </div>
+          <div class="hero-meta">
+            <span class="pill flash">${idx+1}. místo</span>
+            ${st.cur>0?`<span class="pill hot">🔥 ${st.cur} ${dayWord(st.cur)} v řadě</span>`:''}
+            ${cur?`<span class="pill">${nf(myP)} b celkem</span>`:''}
           </div>
         </div>
-      </div>
-      <div class="t-pts" style="color:${theme.color}">${Math.round(pts)}b</div>
-    </div>`;
-  }).join('')||'<div style="text-align:center;padding:20px;color:var(--muted)">Přidej členy v ⚙️</div>';
+        <div class="hero-gap">${gap}</div>
+        ${cur?`<div class="hero-cta"><button class="btn" onclick="go('log')">${todayP>0?'Upravit dnešek':'Zapsat dnešek'} →</button></div>`:''}
+      </div>`;
+  }else document.getElementById('race-hero').innerHTML='';
 
-  document.getElementById('theme-race').innerHTML=`
-    <div class="theme-card ${theme.cls}">
-      <div class="theme-title" style="color:${theme.titleColor}">
-        <span>${theme.vehicle}</span> ${theme.label} · ${formatMonth(viewMonth)}
-      </div>
-      ${rows}
-    </div>`;
-
-  // Member cards
-  document.getElementById('member-cards').innerHTML=sorted.map(m=>{
-    const pts=monthPts(m.id,viewMonth);
-    const tl=isCur?todayLog(m.id):null;
-    const badges=tl?[
-      tl.steps  ?`👟 ${Number(tl.steps).toLocaleString()}`:'',
-      tl.drepy  ?`🦵 ${tl.drepy}`:'',
-      tl.kliky  ?`💪 ${tl.kliky}`:'',
-      tl.bike_km?`🚴 ${tl.bike_km}`:'',
-      tl.run_km ?`🏃 ${tl.run_km}`:'',
-      tl.swim_km?`🏊 ${tl.swim_km}`:'',
-      tl.silovy ?`🏋️ ${tl.silovy}min`:'',
-      tl.pilates?`🧘 ${tl.pilates}min`:'',
-      tl.aikido ?`🥋 ${tl.aikido}min`:'',
-    ].filter(Boolean):[];
-    return `<div class="member-card${m.id===myId?' me':''}">
-      ${m.id===myId?'<div class="me-label">JÁ</div>':''}
-      <div class="card-av">${m.avatar}</div>
-      <div class="card-name">${m.name}</div>
-      <div class="card-pts" style="color:${m.color}">${Math.round(pts)}</div>
-      <div class="card-label">bodů za měsíc</div>
-      ${isCur?`<div class="card-today" style="color:${m.color}">${tl?`+${Math.round(parseFloat(tl.points)||0)}b dnes ✓`:'⏳ dnes ještě ne'}</div>`:''}
-      ${badges.length?`<div class="card-badges">${badges.map(b=>`<span class="badge">${b}</span>`).join('')}</div>`:''}
-    </div>`;
-  }).join('');
-
-  updateChip();
-}
-
-// ── MY RESULTS ──────────────────────────────────────────
-function dateLog(id,d){return logs.find(l=>l.member_id===id&&l.date===d);}
-
-function formatDateLabel(d){
-  const t=today();
-  if(d===t)return 'Dnes';
-  const dt=new Date(d+'T12:00:00');
-  const diff=Math.round((new Date(t+'T12:00:00')-dt)/86400000);
-  if(diff===1)return 'Včera';
-  return dt.toLocaleDateString('cs-CZ',{weekday:'short',day:'numeric',month:'long'});
-}
-
-function changeEditDate(delta){
-  const d=new Date(editDate+'T12:00:00');
-  d.setDate(d.getDate()+delta);
-  const nd=d.toISOString().slice(0,10);
-  if(nd>today())return; // can't go to future
-  editDate=nd;
-  renderMy();
-}
-
-function renderMy(){
-  const me=byId(myId);if(!me){showTab('settings');return;}
-  if(!editDate||editDate>today())editDate=today();
-
-  const dl=dateLog(myId,editDate);
-  vals={
-    steps:dl?.steps||0, drepy:dl?.drepy||0, kliky:dl?.kliky||0,
-    bike_km:parseFloat(dl?.bike_km)||0, run_km:parseFloat(dl?.run_km)||0,
-    swim_km:parseFloat(dl?.swim_km)||0, silovy:dl?.silovy||0, pilates:dl?.pilates||0,
-    aikido:dl?.aikido||0
-  };
-
-  document.getElementById('my-av-big').textContent=me.avatar;
-  document.getElementById('my-av-big').style.borderColor=me.color;
-  document.getElementById('my-name-big').textContent=me.name;
-
-  // Date navigator
-  const isToday=editDate===today();
-  document.getElementById('my-date-nav').innerHTML=`
-    <button class="date-nav-btn" onclick="changeEditDate(-1)">‹</button>
-    <div class="date-nav-label${isToday?' date-today':''}">
-      ${formatDateLabel(editDate)}
-      <span class="date-nav-full">${new Date(editDate+'T12:00:00').toLocaleDateString('cs-CZ',{day:'numeric',month:'long',year:'numeric'})}</span>
-    </div>
-    <button class="date-nav-btn" onclick="changeEditDate(1)" ${isToday?'disabled':''}>›</button>
-  `;
-
-  const favActs  = ACTS.filter(a=> favSports.includes(a.key));
-  const otherActs= ACTS.filter(a=>!favSports.includes(a.key));
-  const actCard  = a=>`
-    <div class="activity-card" style="border-left-color:${a.color}">
-      <div class="act-ico-wrap" style="background:${a.bg}">${a.icon}</div>
-      <div class="act-info">
-        <div class="act-name">${a.label}</div>
-        <div class="act-today" id="pts-${a.key}" style="color:${a.color}">+${Math.round(vals[a.key]*a.pts)} bodů</div>
-      </div>
-      <div class="act-counter">
-        <button class="cnt-btn" style="background:${a.bg};color:${a.color}" onclick="adj('${a.key}',-${a.step})">−</button>
-        <input class="cnt-input" id="val-${a.key}" type="number" value="${vals[a.key]}" min="0" max="${a.max}" step="${a.step}" onchange="setVal('${a.key}',this.value)"/>
-        <button class="cnt-btn" style="background:${a.bg};color:${a.color}" onclick="adj('${a.key}',${a.step})">+</button>
-      </div>
-    </div>`;
-  const divider = favActs.length && otherActs.length
-    ? `<div class="acts-divider"><span>Ostatní sporty</span></div>`
-    : '';
-  document.getElementById('activity-rows').innerHTML=
-    favActs.map(actCard).join('') + divider + otherActs.map(actCard).join('');
-  updateSummary();
-}
-function adj(key,delta){
-  const a=ACTS.find(x=>x.key===key);
-  let v=vals[key]+delta;v=Math.max(0,Math.min(a.max,a.isFloat?Math.round(v*10)/10:Math.round(v)));
-  vals[key]=v;
-  const inp=document.getElementById('val-'+key);if(inp)inp.value=v;
-  const el=document.getElementById('pts-'+key);if(el)el.textContent=`+${Math.round(v*a.pts)} bodů`;
-  updateSummary();
-}
-function setVal(key,raw){
-  const a=ACTS.find(x=>x.key===key);
-  vals[key]=Math.max(0,Math.min(a.max,a.isFloat?parseFloat(raw)||0:parseInt(raw)||0));
-  updateSummary();
-}
-function updateSummary(){
-  const pts=calcPts(vals);
-  document.getElementById('total-pts').textContent=Math.round(pts);
-  const b=[
-    vals.steps   ?`👟 ${Number(vals.steps).toLocaleString()} kroků`:'',
-    vals.drepy   ?`🦵 ${vals.drepy} dřepů`:'',
-    vals.kliky   ?`💪 ${vals.kliky} kliků`:'',
-    vals.bike_km ?`🚴 ${vals.bike_km} km`:'',
-    vals.run_km  ?`🏃 ${vals.run_km} km`:'',
-    vals.swim_km ?`🏊 ${vals.swim_km} km`:'',
-    vals.silovy  ?`🏋️ ${vals.silovy} min`:'',
-    vals.pilates ?`🧘 ${vals.pilates} min`:'',
-    vals.aikido  ?`🥋 ${vals.aikido} min`:'',
-  ].filter(Boolean);
-  document.getElementById('sum-badges').innerHTML=b.map(x=>`<span class="badge">${x}</span>`).join('');
-}
-async function saveLog(){
-  const btn=document.getElementById('save-btn');btn.disabled=true;
-  const isToday=editDate===today();
-  btn.textContent='⏳ Ukládám…';
-  try{
-    await sb('logs?on_conflict=member_id,date',{method:'POST',prefer:'resolution=merge-duplicates',body:JSON.stringify({member_id:myId,date:editDate,...vals})});
-    await loadAll();
-    toast(isToday?'✅ Uloženo!':'✅ Zpětně uloženo!');
-    renderMy();updateChip();
-  }catch(e){toast('❌ '+e.message,false);}
-  finally{btn.disabled=false;btn.textContent='💾 Uložit výsledky';}
-}
-
-// ── ARCHIVE ─────────────────────────────────────────────
-function renderArchive(){
-  const months=allMonths();const pastMonths=months.filter(m=>m!==nowMonth());
-  const hofEl=document.getElementById('hof-list');
-  const hof=pastMonths.map(ym=>({ym,w:monthWinner(ym)})).filter(x=>x.w);
-  hofEl.innerHTML=hof.length?hof.map(({ym,w})=>{
-    const th=themeForMonth(ym);
-    return `<div class="hof-row">
-      <div class="hof-medal">${th.vehicle}</div>
-      <div class="hof-info"><div class="hof-month">${formatMonth(ym)}</div><div class="hof-name">${w.member.avatar} ${w.member.name}</div></div>
-      <div class="hof-pts">${Math.round(w.pts)} b</div></div>`;
-  }).join(''):'<div class="empty-state"><div class="empty-ico">🏆</div>Zatím žádné uzavřené měsíce</div>';
-
-  document.getElementById('archive-list').innerHTML=months.map(ym=>{
-    const sorted=[...members].sort((a,b)=>monthPts(b.id,ym)-monthPts(a.id,ym));
-    const w=monthWinner(ym);const isCur=ym===nowMonth();const th=themeForMonth(ym);
-    return `<div class="archive-month">
-      <div class="archive-header" onclick="toggleArchive('${ym}')">
-        <div class="archive-title">${th.vehicle} ${formatMonth(ym)}${isCur?' 🔴':''}</div>
-        <div style="display:flex;align-items:center;gap:8px">
-          <div class="archive-winner-chip">${w?`${w.member.avatar} ${w.member.name} · ${Math.round(w.pts)}b`:'—'} <span id="chev-${ym}">›</span></div>
-        </div>
-      </div>
-      <div class="archive-body" id="ab-${ym}">
-        ${sorted.map((m,i)=>{
-          const medal=i===0?'🥇':i===1?'🥈':i===2?'🥉':`${i+1}.`;
-          return `<div class="archive-member-row">
-            <div class="archive-rank">${medal}</div>
-            <div class="archive-av">${m.avatar}</div>
-            <div class="archive-name">${m.name}${m.id===myId?' <span class="me-tag">JÁ</span>':''}</div>
-            <div class="archive-pts">${Math.round(monthPts(m.id,ym))} b</div>
-          </div>`;}).join('')}
-        <div style="padding:8px 0 2px">
-          <button class="archive-recap-btn" style="width:100%" onclick="openRecap('${ym}')">📊 Rekapitulace měsíce</button>
-        </div>
+  document.getElementById('race-tower').innerHTML=members.length?'<div class="tower">'+sorted.map((m,i)=>{
+    const p=monthPts(m.id,viewMonth),w=Math.max(6,Math.round(p/max*100));
+    const gap=i===0?(sorted.length>1?'lídr závodu':''):`+${nf(monthPts(sorted[i-1].id,viewMonth)-p)} b na ${esc(sorted[i-1].name)}`;
+    return `<div class="tw${m.id===myId?' me':''}${i===0?' p1':''}">
+      <div class="bib"><div class="bib-n">${pad(i+1)}</div><div class="bib-l">${i===0?'LÍDR':'POZ'}</div></div>
+      <div class="tw-body">
+        <div class="tw-line"><span class="tw-av">${m.avatar}</span>
+          <span class="tw-name">${esc(m.name)}</span>
+          <span class="tw-pts">${nf(p)}<span> b</span></span></div>
+        <div class="tw-track">
+          <div class="tw-fill" style="--w:${w}%;background:${m.color};animation-delay:${i*90}ms"></div>
+          <div class="tw-veh" style="--w:${w}%;animation-delay:${i*90}ms">${r.veh}</div></div>
+        ${gap?`<div class="tw-gap">${gap}</div>`:''}
       </div></div>`;
-  }).join('');
+  }).join('')+'</div>':`<div class="empty"><i>👨‍👩‍👧</i>Zatím nikdo nestartuje.<br/>Přidej členy rodiny v záložce Já.</div>`;
+
+  const t=today();
+  document.getElementById('race-today').innerHTML=cur&&members.length?`
+    <div class="sec">Kdo už dnes hnul kostrou</div>
+    <div class="hstrip">${sorted.map(m=>{const p=dayPts(m.id,t);
+      return `<div class="hcard${p>0?' done':''}"><div class="hcard-av">${m.avatar}</div>
+        <div class="hcard-nm">${esc(m.name)}</div>
+        <div class="hcard-v">${p>0?'+'+nf(p)+' b':'—'}</div></div>`;}).join('')}</div>`:'';
+
+  document.getElementById('rates-b').innerHTML=ACTS.map(a=>`
+    <div class="rate"><div class="rate-i" style="background:${tint(a.color,.22)}">${a.icon}</div>
+      <div class="rate-n">${a.label}</div><div class="rate-v">${a.rate}</div></div>`).join('');
 }
-function toggleArchive(ym){
-  const b=document.getElementById('ab-'+ym);const c=document.getElementById('chev-'+ym);
-  const o=b.classList.toggle('open');c.textContent=o?'⌄':'›';
+
+/* ══ TRAINING GRID ══ */
+function setGridMode(m){
+  gridMode=m;
+  document.getElementById('g-me').classList.toggle('on',m==='me');
+  document.getElementById('g-fam').classList.toggle('on',m==='fam');
+  renderGrid();
 }
+function renderGrid(){
+  const me=byId(myId);if(!me)return;
+  const ym=viewMonth,n=daysIn(ym),[y,mo]=ym.split('-').map(Number);
+  const off=(new Date(y,mo-1,1).getDay()+6)%7,t=today(),cur=ym===nowM();
 
-// ── MONTHLY RECAP ───────────────────────────────────────
-function openRecap(ym){
-  const th=themeForMonth(ym);
-  document.getElementById('recap-month-label').textContent=th.vehicle+' Rekapitulace';
-  document.getElementById('recap-title').textContent=formatMonth(ym);
+  const mine=[];for(let d=1;d<=n;d++)mine.push({p:dayPts(myId,`${ym}-${pad(d)}`)});
+  const done=mine.filter(x=>x.p>0).length;
+  const best=mine.reduce((b,x)=>x.p>b.p?x:b,{p:0});
+  const total=mine.reduce((s,x)=>s+x.p,0);
+  const st=streaks(myId,ym),maxP=Math.max(1,best.p);
+  const streakVal=cur?st.cur:st.best;
 
-  const sorted=[...members].sort((a,b)=>monthPts(b.id,ym)-monthPts(a.id,ym));
-  const w=monthWinner(ym);
+  document.getElementById('grid-stats').innerHTML=`<div class="stats">
+    <div class="stat accent"><div class="disp fig stat-v">${done}<small> / ${n}</small></div><div class="stat-l">Dní s pohybem</div></div>
+    <div class="stat"><div class="disp fig stat-v">${streakVal}<small> ${dayWord(streakVal)}</small></div><div class="stat-l">${cur?'Série teď':'Nejdelší série'}</div></div>
+    <div class="stat"><div class="disp fig stat-v">${nf(total)}<small> b</small></div><div class="stat-l">Body za měsíc</div></div>
+    <div class="stat"><div class="disp fig stat-v">${nf(best.p)}<small> b</small></div><div class="stat-l">Nejlepší den</div></div>
+  </div>`;
 
-  // Days in month
-  const [y,mo]=ym.split('-').map(Number);
-  const daysInMonth=new Date(y,mo,0).getDate();
-
-  let html='';
-
-  // Winner highlight
-  if(w){
-    html+=`<div class="recap-winner">
-      <div class="recap-winner-av">${w.member.avatar}</div>
-      <div class="recap-winner-info">
-        <div class="recap-winner-tag">🏆 Vítěz měsíce</div>
-        <div class="recap-winner-name">${w.member.name}</div>
-        <div class="recap-winner-pts">${Math.round(w.pts)} bodů · ${th.label}</div>
-      </div>
-      <div style="font-size:34px">👑</div>
-    </div>`;
-  }
-
-  html+='<div class="recap-sec">Přehled členů</div>';
-
-  // Per-person cards
-  sorted.forEach((m,rank)=>{
-    const mLogs=logs.filter(l=>l.member_id===m.id&&l.date.startsWith(ym));
-    const totalPts=mLogs.reduce((s,l)=>s+(parseFloat(l.points)||0),0);
-    if(totalPts===0&&mLogs.length===0)return; // skip members with no data
-    const activeDays=mLogs.filter(l=>(parseFloat(l.points)||0)>0).length;
-    const consistencyPct=Math.round(activeDays/daysInMonth*100);
-
-    // Aggregate activity totals
-    const totals={};
-    ACTS.forEach(a=>{totals[a.key]=mLogs.reduce((s,l)=>s+(parseFloat(l[a.key])||0),0);});
-
-    // Best single day
-    const bestDay=mLogs.reduce((best,l)=>{
-      const p=parseFloat(l.points)||0;
-      return p>(parseFloat(best?.points)||0)?l:best;
-    },null);
-
-    // Most-earned activity
-    const actPts=ACTS.map(a=>({a,pts:totals[a.key]*a.pts})).filter(x=>x.pts>0).sort((a,b)=>b.pts-a.pts);
-    const topAct=actPts[0];
-    const maxActPts=actPts[0]?.pts||1;
-
-    // Streak calculation
-    let bestStreak=0,curStreak=0,lastDate='';
-    const daySet=new Set(mLogs.filter(l=>(parseFloat(l.points)||0)>0).map(l=>l.date));
-    for(let d=1;d<=daysInMonth;d++){
-      const ds=`${ym}-${String(d).padStart(2,'0')}`;
-      if(daySet.has(ds)){curStreak++;bestStreak=Math.max(bestStreak,curStreak);}
-      else curStreak=0;
+  let cells='';
+  for(let i=0;i<off;i++)cells+='<div class="day pad"></div>';
+  for(let d=1;d<=n;d++){
+    const ds=`${ym}-${pad(d)}`,future=ds>t;
+    if(gridMode==='fam'){
+      const who=members.filter(m=>dayPts(m.id,ds)>0);
+      cells+=`<button class="day${who.length?'':' rest'}${future?' future':''}${ds===t?' today':''}" onclick="openDay('${ds}')">
+        <span class="day-n">${d}</span><span class="day-f">${who.slice(0,4).map(m=>m.avatar).join('')}</span></button>`;
+    }else{
+      const p=dayPts(myId,ds);
+      const lvl=p<=0?0:Math.min(4,Math.ceil(p/maxP*4));
+      const a=[0,.3,.52,.76,1][lvl];
+      const style=lvl?`background:${tint(me.color,a)};color:${onColor(me.color,a)};`:'';
+      cells+=`<button class="day${lvl?'':' rest'}${future?' future':''}${ds===t?' today':''}" style="${style}"
+        onclick="openDay('${ds}')" aria-label="${d}. ${MONTHS[mo-1]}, ${nf(p)} bodů">
+        <span class="day-n">${d}</span>${p>0?`<span class="day-p">${nf(p)}</span>`:''}</button>`;
     }
-
-    const medal=rank===0?'🥇':rank===1?'🥈':rank===2?'🥉':`#${rank+1}`;
-    const isMe=m.id===myId;
-
-    html+=`<div class="recap-person${isMe?' recap-me':''}">
-      <div class="recap-person-header">
-        <div class="recap-person-av">${m.avatar}</div>
-        <div class="recap-person-info">
-          <div class="recap-person-name">${medal} ${m.name}${isMe?' <span class="me-tag">JÁ</span>':''}</div>
-          <div class="recap-person-rank">${activeDays} aktivních dní z ${daysInMonth}</div>
-        </div>
-        <div>
-          <div class="recap-person-pts" style="color:${m.color}">${Math.round(totalPts)}<small> b</small></div>
-        </div>
-      </div>
-
-      <div class="recap-stats">
-        <div class="recap-stat">
-          <div class="recap-stat-val">${activeDays}</div>
-          <div class="recap-stat-lbl">Aktivní dny</div>
-        </div>
-        <div class="recap-stat">
-          <div class="recap-stat-val">${consistencyPct}%</div>
-          <div class="recap-stat-lbl">Konzistence</div>
-        </div>
-        <div class="recap-stat">
-          <div class="recap-stat-val">${bestStreak}</div>
-          <div class="recap-stat-lbl">Nejdelší série</div>
-        </div>
-        <div class="recap-stat">
-          <div class="recap-stat-val">${bestDay?Math.round(parseFloat(bestDay.points)||0):0}<small style="font-size:11px;color:var(--muted)"> b</small></div>
-          <div class="recap-stat-lbl">Nejlepší den</div>
-        </div>
-      </div>
-
-      ${actPts.length?`<div class="recap-acts">
-        ${actPts.slice(0,5).map(({a,pts})=>{
-          const rawVal=a.isFloat?totals[a.key].toFixed(1):Math.round(totals[a.key]).toLocaleString();
-          const unit=a.isFloat?'km':a.key==='steps'?'kroků':a.key==='drepy'?'dřepů':a.key==='kliky'?'kliků':'min';
-          return `
-          <div class="recap-act-row" style="align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.05)">
-            <div class="recap-act-icon" style="font-size:20px">${a.icon}</div>
-            <div style="flex:1;min-width:0">
-              <div style="font-size:13px;font-weight:800;color:${a.color}">${rawVal} <span style="font-size:11px;font-weight:700;color:var(--muted)">${unit}</span></div>
-              <div style="display:flex;align-items:center;gap:6px;margin-top:3px">
-                <div class="recap-act-bar-wrap" style="flex:1;width:auto"><div class="recap-act-bar" style="width:${Math.round(pts/maxActPts*100)}%;background:${a.color}"></div></div>
-                <span style="font-size:10px;color:var(--muted);font-weight:600;white-space:nowrap">${Math.round(pts)} b</span>
-              </div>
-            </div>
-          </div>`;
-        }).join('')}
-      </div>`:''}
-
-      <div class="recap-footer">
-        ${activeDays===0?'<span class="recap-badge">😴 Žádná aktivita</span>':''}
-        ${activeDays>=daysInMonth?'<span class="recap-badge">🔥 Perfektní měsíc!</span>':''}
-        ${bestStreak>=7?'<span class="recap-badge">⚡ Série '+bestStreak+' dní</span>':''}
-        ${consistencyPct>=80?'<span class="recap-badge">💎 Superkonzistence</span>':''}
-        ${totals.steps>=100000?'<span class="recap-badge">👟 '+Math.round(totals.steps/1000)+'k kroků</span>':''}
-        ${totals.run_km>=50?'<span class="recap-badge">🏃 '+totals.run_km.toFixed(0)+'km běhu</span>':''}
-        ${totals.bike_km>=100?'<span class="recap-badge">🚴 '+totals.bike_km.toFixed(0)+'km kola</span>':''}
-        ${totals.swim_km>=10?'<span class="recap-badge">🏊 '+totals.swim_km.toFixed(1)+'km plavání</span>':''}
-        ${topAct&&topAct.pts>0?`<span class="recap-badge">${topAct.a.icon} Hlavní sport</span>`:''}
-        ${rank===0&&totalPts>0?'<span class="recap-badge" style="background:#2a2010;border-color:var(--gold);color:var(--gold)">🏆 Vítěz měsíce</span>':''}
-      </div>
-    </div>`;
-  });
-
-  if(!html.includes('recap-person')){
-    html+='<div style="text-align:center;padding:30px;color:var(--muted)">😴 Tento měsíc nebyla zaznamenána žádná aktivita.</div>';
   }
-
-  document.getElementById('recap-body').innerHTML=html;
-  document.getElementById('recap-modal').classList.add('open');
+  document.getElementById('grid-body').innerHTML=`<div class="grid-card">
+    <div class="dow">${DOW.map(d=>`<span>${d}</span>`).join('')}</div>
+    <div class="days">${cells}</div>
+    ${gridMode==='me'
+      ?`<div class="key">volno ${[0,.3,.52,.76,1].map(a=>`<i style="background:${a?tint(me.color,a):'transparent'}"></i>`).join('')} nálož</div>`
+      :`<div class="key">kdo ten den cvičil</div>`}
+  </div>`;
 }
-function closeRecap(){document.getElementById('recap-modal').classList.remove('open');}
 
-// ── FAVOURITE SPORTS ────────────────────────────────────
-function renderFavSports(){
-  document.getElementById('fav-sports-list').innerHTML=ACTS.map(a=>{
-    const isFav=favSports.includes(a.key);
-    return `<div class="fav-sport-row">
-      <div class="act-ico-wrap" style="background:${a.bg};width:34px;height:34px;font-size:16px;border-radius:8px;flex-shrink:0">${a.icon}</div>
-      <div style="flex:1;font-size:14px;font-weight:700">${a.label}</div>
-      <button class="fav-btn${isFav?' fav-on':''}" onclick="toggleFav('${a.key}')" title="${isFav?'Odebrat z oblíbených':'Přidat do oblíbených'}">
-        ${isFav?'★':'☆'}
-      </button>
-    </div>`;
+/* ══ DAY SHEET ══ */
+function openDay(ds){
+  document.getElementById('day-eye').textContent=dFull(ds);
+  document.getElementById('day-t').textContent=dLabel(ds);
+  const list=gridMode==='fam'?members:[byId(myId)];
+  let h='';
+  list.forEach(m=>{
+    const l=logOf(m.id,ds),p=ptsOf(l);
+    const rows=l?ACTS.filter(a=>num(l[a.key])>0).map(a=>`
+      <div class="dl"><span style="font-size:18px">${a.icon}</span>
+        <span style="flex:1;font-size:13px;font-weight:800">${a.label}</span>
+        <span class="fig" style="font-size:13px">${fv(a,l[a.key])} <small style="color:var(--ink-2)">${a.unit}</small></span>
+        <span class="fig" style="font-size:13px;min-width:48px;text-align:right">${nf(num(l[a.key])*a.pts)} b</span></div>`).join(''):'';
+    h+=`<div class="pop" style="padding:13px 14px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span style="font-size:25px">${m.avatar}</span>
+        <span class="disp" style="flex:1;font-size:16px">${esc(m.name)}</span>
+        <span class="fig" style="font-size:20px;color:${p>0?'var(--ink)':'var(--ink-3)'}">${nf(p)} <small style="font-size:11px">b</small></span>
+      </div>${rows?`<div style="margin-top:6px">${rows}</div>`:`<div style="font-size:12px;color:var(--ink-2);font-weight:700;margin-top:8px">Den volna.</div>`}</div>`;
+  });
+  if(ds<=today())h+=`<button class="btn" onclick="editDay('${ds}')">${logOf(myId,ds)?'Upravit můj zápis':'Zapsat tento den'}</button>`;
+  document.getElementById('day-b').innerHTML=h;openSh('sh-day');
+}
+function editDay(ds){closeSh('sh-day');editDate=ds;go('log');}
+
+/* ══ LOG ══ */
+function setSave(s){
+  const el=document.getElementById('save');if(!el)return;
+  el.className='save '+s;el.innerHTML='';
+  el.appendChild(document.createElement('i'));
+  el.appendChild(document.createTextNode(
+    s==='saved'?'Uloženo':s==='pending'?'Ukládám':s==='err'?'Neuloženo — klepni pro další pokus':'Ukládá se samo'));
+}
+function shiftDay(d){
+  flush();
+  const x=new Date(editDate+'T12:00:00');x.setDate(x.getDate()+d);
+  const nd=`${x.getFullYear()}-${pad(x.getMonth()+1)}-${pad(x.getDate())}`;
+  if(nd>today())return;editDate=nd;renderLog();
+}
+function renderLog(){
+  const me=byId(myId);if(!me){go('me');return;}
+  if(!editDate||editDate>today())editDate=today();
+  const l=logOf(myId,editDate);ACTS.forEach(a=>vals[a.key]=num(l?.[a.key]));
+  const isT=editDate===today();
+
+  document.getElementById('log-date').innerHTML=`
+    <div class="datebar">
+      <button class="icon-btn" onclick="shiftDay(-1)" aria-label="Předchozí den">‹</button>
+      <div class="datebar-mid"><div class="disp datebar-d">${dLabel(editDate)}</div>
+        <div class="datebar-f">${dFull(editDate)}</div></div>
+      <button class="icon-btn" onclick="shiftDay(1)" ${isT?'disabled style="opacity:.3"':''} aria-label="Další den">›</button>
+    </div>
+    <button class="save" id="save" onclick="flush(true)"></button>`;
+
+  const f=ACTS.filter(a=>favs.includes(a.key)),r=ACTS.filter(a=>!favs.includes(a.key));
+  const vis=showAll?[...f,...r]:[...f,...r.filter(a=>vals[a.key]>0)];
+  const hid=r.length-r.filter(a=>vals[a.key]>0).length;
+  document.getElementById('log-acts').innerHTML=
+    (vis.length?vis.map(card).join(''):`<div class="empty" style="margin-bottom:10px"><i>⭐</i>Vyber si oblíbené sporty v záložce Já — objeví se rovnou tady.</div>`)+
+    (hid>0?`<button class="ghost-btn" onclick="showAll=${!showAll};renderLog()">${showAll?'Skrýt nepoužité sporty':`Další sporty (${hid})`}</button>`:'');
+  tally();setSave(dirty?'pending':(l?'saved':'idle'));
+}
+function card(a){
+  const v=vals[a.key];
+  return `<div class="act${v>0?' on':''}">
+    <div class="act-h">
+      <div class="act-i" style="background:${tint(a.color,v>0?.55:.18)}">${a.icon}</div>
+      <div><div class="act-n">${a.label}</div><div class="act-r">${a.rate}</div></div>
+      <div class="act-t"><div class="act-tv" id="tv-${a.key}">${fv(a,v)}</div>
+        <div class="act-tp" id="tp-${a.key}">${nf(v*a.pts)} b</div></div>
+    </div>
+    <div class="act-c">
+      <button class="step" onclick="adj('${a.key}',-${a.step})" aria-label="Ubrat">−</button>
+      <input class="act-in" id="in-${a.key}" type="number" inputmode="decimal" value="${v||''}" placeholder="0"
+        min="0" max="${a.max}" step="${a.step}" oninput="setVal('${a.key}',this.value)"/>
+      <button class="step" onclick="adj('${a.key}',${a.step})" aria-label="Přidat">+</button>
+    </div>
+    <div class="quick">${a.quick.map(q=>`<button onclick="adj('${a.key}',${q})">+${fv(a,q)}</button>`).join('')}</div>
+  </div>`;
+}
+const clamp=(a,v)=>Math.max(0,Math.min(a.max,a.dec?Math.round(v*10)/10:Math.round(v)));
+function adj(k,d){const a=ACT[k];vals[k]=clamp(a,vals[k]+d);
+  const i=document.getElementById('in-'+k);if(i)i.value=vals[k]||'';refresh(k);queue();}
+function setVal(k,raw){vals[k]=clamp(ACT[k],parseFloat(raw)||0);refresh(k);queue();}
+function refresh(k){
+  const a=ACT[k],v=vals[k];
+  const tv=document.getElementById('tv-'+k),tp=document.getElementById('tp-'+k);
+  if(tv)tv.textContent=fv(a,v);if(tp)tp.textContent=nf(v*a.pts)+' b';
+  const c=document.getElementById('in-'+k)?.closest('.act');
+  if(c){c.classList.toggle('on',v>0);c.querySelector('.act-i').style.background=tint(a.color,v>0?.55:.18);}
+  tally();
+}
+function tally(){
+  const p=calc(vals);
+  const chips=ACTS.filter(a=>vals[a.key]>0).map(a=>`<span class="tchip">${a.icon} ${fv(a,vals[a.key])} ${a.unit}</span>`).join('');
+  document.getElementById('log-tally').innerHTML=`<div class="tally">
+    <div><div class="tally-l">${editDate===today()?'Dnešní nálož':'Nálož toho dne'}</div>
+      <div class="disp fig tally-n">${nf(p)}<small> b</small></div></div>
+    <div class="tally-chips">${chips||'<span class="tchip">zatím nic ↓</span>'}</div></div>`;
+}
+function queue(){dirty=true;setSave('pending');clearTimeout(saveTimer);saveTimer=setTimeout(()=>flush(),900);}
+async function flush(manual){
+  if(!dirty&&!manual)return;
+  clearTimeout(saveTimer);
+  const body={member_id:myId,date:editDate};ACTS.forEach(a=>body[a.key]=vals[a.key]);
+  const d=editDate;dirty=false;setSave('pending');
+  let l=logOf(myId,d);if(!l){l={member_id:myId,date:d};logs.unshift(l);}
+  ACTS.forEach(a=>l[a.key]=vals[a.key]);l.points=calc(vals);
+  try{
+    await sb('logs?on_conflict=member_id,date',{method:'POST',prefer:'resolution=merge-duplicates',body:JSON.stringify(body)});
+    if(!dirty)setSave('saved');
+  }catch(e){dirty=true;setSave('err');toast('Uložení selhalo',true);}
+}
+
+/* ══ ARCHIVE ══ */
+function renderArchive(){
+  const ms=monthList(),past=ms.filter(m=>m!==nowM());
+  const h=past.map(ym=>({ym,w:winnerOf(ym)})).filter(x=>x.w);
+  document.getElementById('hof').innerHTML=h.length?h.map(({ym,w},i)=>`
+    <div class="hof${i===0?' first':''}"><span style="font-size:26px">${race(ym).veh}</span>
+      <div><div class="hof-m">${fmtM(ym)}</div><div class="hof-n">${w.m.avatar} ${esc(w.m.name)}</div></div>
+      <div class="hof-p">${nf(w.p)} b</div></div>`).join(''):
+    `<div class="empty"><i>🏅</i>Až doběhne první měsíc, vítěz se objeví tady.</div>`;
+
+  document.getElementById('acc').innerHTML=ms.map(ym=>{
+    const s=[...members].sort((a,b)=>monthPts(b.id,ym)-monthPts(a.id,ym)).filter(m=>monthPts(m.id,ym)>0);
+    const w=winnerOf(ym);
+    return `<div class="acc">
+      <button class="acc-h" onclick="toggleAcc('${ym}')">
+        <span style="font-size:20px">${race(ym).veh}</span>
+        <span class="acc-t">${fmtM(ym)}</span>
+        <span class="acc-w">${w?nf(w.p)+' b':'—'}</span><span id="cv-${ym}">›</span></button>
+      <div class="acc-b" id="ab-${ym}">
+        ${s.length?s.map((m,i)=>`<div class="arow"><span class="arank">${pad(i+1)}</span>
+          <span style="font-size:18px">${m.avatar}</span>
+          <span class="aname">${esc(m.name)}</span>
+          <span class="apts">${nf(monthPts(m.id,ym))} b</span></div>`).join(''):
+          '<div style="font-size:12px;color:var(--ink-2);font-weight:700;padding:6px 0">Bez zápisů.</div>'}
+        <button class="btn alt btn-sm" style="margin-top:11px" onclick="openRecap('${ym}')">📊 Rekapitulace závodu</button>
+      </div></div>`;}).join('');
+}
+function toggleAcc(ym){
+  const b=document.getElementById('ab-'+ym);
+  document.getElementById('cv-'+ym).textContent=b.classList.toggle('open')?'⌄':'›';
+}
+
+/* ══ RECAP ══ */
+function openRecap(ym){
+  const r=race(ym),n=daysIn(ym);
+  document.getElementById('rec-eye').textContent=r.veh+' '+r.name;
+  document.getElementById('rec-t').textContent=fmtM(ym);
+  const s=[...members].sort((a,b)=>monthPts(b.id,ym)-monthPts(a.id,ym));
+  const w=winnerOf(ym);let h='';
+  if(w)h+=`<div class="hof first"><span style="font-size:30px">👑</span>
+    <div><div class="hof-m">Vítěz závodu</div><div class="hof-n">${w.m.avatar} ${esc(w.m.name)}</div></div>
+    <div class="hof-p">${nf(w.p)} b</div></div>`;
+  s.forEach((m,rank)=>{
+    const ml=logs.filter(l=>l.member_id===m.id&&l.date.startsWith(ym));if(!ml.length)return;
+    const total=ml.reduce((a,l)=>a+ptsOf(l),0);
+    const act=ml.filter(l=>ptsOf(l)>0).length;
+    const st=streaks(m.id,ym);
+    const bd=ml.reduce((b,l)=>ptsOf(l)>ptsOf(b)?l:b,ml[0]);
+    const tot={};ACTS.forEach(a=>tot[a.key]=ml.reduce((x,l)=>x+num(l[a.key]),0));
+    const ap=ACTS.map(a=>({a,p:tot[a.key]*a.pts})).filter(x=>x.p>0).sort((x,y)=>y.p-x.p);
+    const mx=ap[0]?.p||1;
+    h+=`<div class="rc${m.id===myId?' me':''}">
+      <div class="rc-h"><span style="font-size:26px">${m.avatar}</span>
+        <div><div class="rc-n">${esc(m.name)}</div><div class="rc-s">${pad(rank+1)} · ${act} z ${n} dní</div></div>
+        <div class="rc-p">${nf(total)} <small style="font-size:11px">b</small></div></div>
+      <div class="rc-g">
+        <div class="rc-c"><div class="rc-cv">${act}</div><div class="rc-cl">Aktivní dny</div></div>
+        <div class="rc-c"><div class="rc-cv">${Math.round(act/n*100)}%</div><div class="rc-cl">Konzistence</div></div>
+        <div class="rc-c"><div class="rc-cv">${st.best}</div><div class="rc-cl">Nejdelší série</div></div>
+        <div class="rc-c"><div class="rc-cv">${nf(ptsOf(bd))}</div><div class="rc-cl">Nejlepší den</div></div>
+      </div>
+      ${ap.slice(0,5).map(({a,p})=>`<div class="rc-a"><span style="font-size:16px;width:22px">${a.icon}</span>
+        <span class="fig" style="font-size:11px;min-width:72px">${fv(a,tot[a.key])} ${a.unit}</span>
+        <span class="rc-bar"><i style="width:${Math.round(p/mx*100)}%;background:${a.color}"></i></span>
+        <span class="fig" style="font-size:10px;min-width:38px;text-align:right">${nf(p)} b</span></div>`).join('')}
+      <div class="rc-f">
+        ${act>=n?'<span class="bdg">🔥 Perfektní měsíc</span>':''}
+        ${st.best>=7?`<span class="bdg">⚡ Série ${st.best} dní</span>`:''}
+        ${tot.steps>=100000?`<span class="bdg">👟 ${Math.round(tot.steps/1000)}k kroků</span>`:''}
+        ${tot.run_km>=50?`<span class="bdg">🏃 ${tot.run_km.toFixed(0)} km</span>`:''}
+        ${tot.bike_km>=100?`<span class="bdg">🚴 ${tot.bike_km.toFixed(0)} km</span>`:''}
+        ${rank===0&&total>0?'<span class="bdg" style="background:var(--flash)">🏆 Vítěz</span>':''}
+      </div></div>`;
+  });
+  if(!h.includes('rc-h'))h+='<div class="empty"><i>😴</i>Tenhle závod nikdo neodjel.</div>';
+  document.getElementById('rec-b').innerHTML=h;openSh('sh-recap');
+}
+
+/* ══ ME ══ */
+function renderMe(){
+  const me=byId(myId);if(!me)return;
+  const st=streaks(myId,nowM());
+  document.getElementById('me-head').innerHTML=`<div class="me-head">
+    <div class="me-av" style="background:${tint(me.color,.45)}">${me.avatar}</div>
+    <div style="flex:1;min-width:0"><div class="disp me-n">${esc(me.name)}</div>
+      <div class="me-s">${nf(monthPts(myId,nowM()))} b tento měsíc · série ${st.cur}</div></div>
+    <button class="icon-btn" onclick="openProfile()" aria-label="Upravit profil">✏️</button></div>`;
+
+  document.getElementById('fav').innerHTML=ACTS.map(a=>{
+    const on=favs.includes(a.key);
+    return `<div class="row"><div class="act-i" style="width:34px;height:34px;flex:0 0 34px;font-size:16px;background:${tint(a.color,.3)}">${a.icon}</div>
+      <div class="row-n">${a.label}</div>
+      <button class="star${on?' on':''}" onclick="toggleFav('${a.key}')" aria-label="${on?'Odebrat':'Přidat'}">${on?'★':'☆'}</button></div>`;
   }).join('');
+
+  document.getElementById('mem').innerHTML=members.map(m=>`
+    <div class="row"><span style="font-size:22px">${m.avatar}</span>
+      <span class="jersey" style="background:${m.color}"></span>
+      <div style="flex:1"><div class="row-n">${esc(m.name)}</div>
+        <div class="me-s">${nf(monthPts(m.id,nowM()))} b tento měsíc</div></div>
+      <button class="trash" onclick="removeMember('${m.id}')" aria-label="Smazat">🗑️</button></div>`).join('');
+
+  buildAv('nw-av','nw');buildCol('nw-col','nw');
+  const i=document.getElementById('nw-name');
+  i.oninput=()=>document.getElementById('nw-go').disabled=!i.value.trim();
 }
-function toggleFav(key){
-  if(favSports.includes(key)) favSports=favSports.filter(k=>k!==key);
-  else favSports.push(key);
-  localStorage.setItem('ff_fav_sports',JSON.stringify(favSports));
-  renderFavSports();
+function toggleFav(k){
+  favs=favs.includes(k)?favs.filter(x=>x!==k):[...favs,k];
+  localStorage.setItem('ff_favs',JSON.stringify(favs));renderMe();
 }
-function renderSettings(){
-  renderFavSports();
-  document.getElementById('settings-members').innerHTML=members.map(m=>`
-    <div class="settings-member">
-      <div class="sm-av">${m.avatar}</div>
-      <div class="sm-bar" style="background:${m.color}"></div>
-      <div class="sm-info"><div class="sm-name">${m.name}${m.id===myId?' <span class="me-tag">JÁ</span>':''}</div><div class="sm-pts">${Math.round(monthPts(m.id,nowMonth()))} b tento měsíc</div></div>
-      <button class="del-btn" onclick="removeMember('${m.id}')">🗑️</button>
-    </div>`).join('')||'<div style="color:var(--muted);font-size:13px;padding:4px 0">Zatím žádní členové</div>';
-  renderGrid('new-avatars',newAv,av=>{newAv=av;});
-  renderColors('new-colors',newCol,c=>{newCol=c;});
-  document.getElementById('new-name').oninput=checkAddBtn;
-}
-function checkAddBtn(){document.getElementById('add-btn').disabled=!document.getElementById('new-name')?.value.trim();}
 async function addMember(){
-  const name=document.getElementById('new-name').value.trim();if(!name)return;
-  const btn=document.getElementById('add-btn');btn.disabled=true;btn.textContent='⏳';
-  try{const res=await sb('members',{method:'POST',prefer:'return=representation',body:JSON.stringify({name,avatar:newAv,color:newCol})});
-    members.push(Array.isArray(res)?res[0]:res);document.getElementById('new-name').value='';renderSettings();toast('✅ Člen přidán!');
-  }catch(e){toast('❌ '+e.message,false);}
-  finally{btn.disabled=false;btn.textContent='Přidat člena';}
+  const el=document.getElementById('nw-name'),name=el.value.trim();if(!name)return;
+  const b=document.getElementById('nw-go');b.disabled=true;b.textContent='Přidávám…';
+  try{const res=await sb('members',{method:'POST',prefer:'return=representation',
+      body:JSON.stringify({name,avatar:sel.nw.a,color:sel.nw.c})});
+    members.push(Array.isArray(res)?res[0]:res);el.value='';renderMe();toast('Člen je na startu');
+  }catch(e){toast('Nepodařilo se přidat',true);}
+  finally{b.disabled=false;b.textContent='Přidat člena';}
 }
 async function removeMember(id){
-  if(!confirm('Smazat tohoto člena a všechna jeho data?'))return;
-  await sb('members?id=eq.'+id,{method:'DELETE'});
-  members=members.filter(m=>m.id!==id);logs=logs.filter(l=>l.member_id!==id);
-  if(myId===id){localStorage.removeItem('ff_my_id');location.reload();}
-  renderSettings();toast('🗑️ Odstraněno');
+  const m=byId(id);if(!confirm(`Smazat ${m?.name} a všechna data? Nejde vrátit.`))return;
+  try{await sb('members?id=eq.'+id,{method:'DELETE'});
+    members=members.filter(x=>x.id!==id);logs=logs.filter(l=>l.member_id!==id);
+    if(myId===id){localStorage.removeItem('ff_my_id');location.reload();return;}
+    renderMe();toast('Smazáno');
+  }catch(e){toast('Smazání selhalo',true);}
 }
+function switchUser(){if(confirm('Přepnout na jiného člena?')){localStorage.removeItem('ff_my_id');location.reload();}}
 
-// ── MODAL ───────────────────────────────────────────────
-function openModal(){
-  const me=byId(myId);if(!me)return;editAv=me.avatar;editCol=me.color;
-  document.getElementById('edit-name').value=me.name;
-  renderGrid('edit-avatars',editAv,av=>{editAv=av;});
-  renderColors('edit-colors',editCol,c=>{editCol=c;});
-  document.getElementById('profile-modal').classList.add('open');
+/* ══ PROFILE ══ */
+function openProfile(){
+  const me=byId(myId);if(!me)return;
+  sel.ed={a:me.avatar,c:me.color};
+  document.getElementById('ed-name').value=me.name;
+  buildAv('ed-av','ed');buildCol('ed-col','ed');openSh('sh-prof');
 }
-function closeModal(){document.getElementById('profile-modal').classList.remove('open');}
 async function saveProfile(){
-  const name=document.getElementById('edit-name').value.trim();if(!name)return;
-  await sb('members?id=eq.'+myId,{method:'PATCH',headers:{'Prefer':'return=representation'},body:JSON.stringify({name,avatar:editAv,color:editCol})});
-  const me=members.find(m=>m.id===myId);if(me){me.name=name;me.avatar=editAv;me.color=editCol;}
-  closeModal();renderBoard();updateChip();toast('✅ Profil uložen');
+  const name=document.getElementById('ed-name').value.trim();if(!name)return toast('Doplň jméno',true);
+  try{await sb('members?id=eq.'+myId,{method:'PATCH',body:JSON.stringify({name,avatar:sel.ed.a,color:sel.ed.c})});
+    Object.assign(byId(myId),{name,avatar:sel.ed.a,color:sel.ed.c});
+    closeSh('sh-prof');render();toast('Profil uložen');
+  }catch(e){toast('Uložení selhalo',true);}
 }
 
-// ── GRID HELPERS ────────────────────────────────────────
-function renderGrid(id,sel,cb){
+/* ══ PICKERS ══ */
+function buildAv(id,s){
   const el=document.getElementById(id);if(!el)return;
-  el.innerHTML=AVATARS.map(av=>`<button class="av-btn${av===sel?' sel':''}" onclick="pickAv('${id}','${av}')">${av}</button>`).join('');
-  el._cb=cb;
+  el.innerHTML=AVATARS.map((a,i)=>`<button class="av${a===sel[s].a?' sel':''}" data-i="${i}">${a}</button>`).join('');
+  el.onclick=e=>{const b=e.target.closest('.av');if(!b)return;sel[s].a=AVATARS[+b.dataset.i];
+    el.querySelectorAll('.av').forEach(x=>x.classList.toggle('sel',x===b));};
 }
-function pickAv(id,av){
-  const el=document.getElementById(id);
-  el.querySelectorAll('.av-btn').forEach(b=>b.classList.toggle('sel',b.textContent===av));
-  if(el._cb)el._cb(av);
-  if(id==='ob-avatars')obAv=av;if(id==='new-avatars')newAv=av;if(id==='edit-avatars')editAv=av;
-}
-function renderColors(id,sel,cb){
+function buildCol(id,s){
   const el=document.getElementById(id);if(!el)return;
-  el.innerHTML=COLORS.map(c=>`<div class="col-dot${c===sel?' sel':''}" style="background:${c}" onclick="pickCol('${id}','${c}')"></div>`).join('');
-  el._cb=cb;
-}
-function pickCol(id,c){
-  const el=document.getElementById(id);
-  el.querySelectorAll('.col-dot').forEach(b=>b.classList.toggle('sel',b.style.background===c));
-  if(el._cb)el._cb(c);
-  if(id==='ob-colors')obCol=c;if(id==='new-colors')newCol=c;if(id==='edit-colors')editCol=c;
+  el.innerHTML=COLORS.map((c,i)=>`<button class="col${c===sel[s].c?' sel':''}" data-i="${i}" style="background:${c}" aria-label="Dres ${i+1}"></button>`).join('');
+  el.onclick=e=>{const b=e.target.closest('.col');if(!b)return;sel[s].c=COLORS[+b.dataset.i];
+    el.querySelectorAll('.col').forEach(x=>x.classList.toggle('sel',x===b));};
 }
 
-// ── ONBOARDING ──────────────────────────────────────────
-function showObStep1(){
-  document.getElementById('ob-step1').style.display='flex';
-  document.getElementById('ob-step2').style.display='none';
-}
-function showObStep2(){
-  document.getElementById('ob-step1').style.display='none';
-  document.getElementById('ob-step2').style.display='flex';
+/* ══ SHEETS ══ */
+const openSh=id=>document.getElementById(id).classList.add('open');
+const closeSh=id=>document.getElementById(id).classList.remove('open');
+document.querySelectorAll('.sh').forEach(s=>s.addEventListener('click',e=>{if(e.target===s)s.classList.remove('open');}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.sh.open').forEach(s=>s.classList.remove('open'));});
+
+/* ══ ONBOARDING ══ */
+function obStep(n){
+  document.getElementById('ob1').style.display=n===1?'flex':'none';
+  document.getElementById('ob2').style.display=n===2?'flex':'none';
 }
 function initOb(){
-  // Render existing members to pick from
-  const list=document.getElementById('ob-existing-list');
+  const l=document.getElementById('ob-list');
   if(members.length){
-    list.innerHTML=`<div class="lbl" style="margin-bottom:10px">Kdo jsi?</div>`+
-      members.map(m=>`
-        <button class="ob-member-btn" onclick="pickExistingMember('${m.id}')">
-          <div class="ob-member-av">${m.avatar}</div>
-          <div class="ob-member-dot" style="background:${m.color}"></div>
-          <div class="ob-member-name">${m.name}</div>
-          <div class="ob-member-pts">${Math.round(monthPts(m.id,nowMonth()))}b</div>
-        </button>`).join('');
-  } else {
-    // No members yet — skip straight to create
-    showObStep2();
-  }
-  renderGrid('ob-avatars',obAv,av=>{obAv=av;});
-  renderColors('ob-colors',obCol,c=>{obCol=c;});
-  document.getElementById('ob-name').oninput=()=>{
-    document.getElementById('ob-btn').disabled=!document.getElementById('ob-name').value.trim();
-  };
+    l.innerHTML=`<span class="lbl">Kdo jsi?</span>`+members.map(m=>`
+      <button class="ob-row" onclick="pickMe('${m.id}')">
+        <span style="font-size:26px">${m.avatar}</span>
+        <span class="jersey" style="background:${m.color}"></span>
+        <span style="flex:1;text-align:left;font-size:16px;font-weight:900">${esc(m.name)}</span>
+        <span class="fig" style="font-size:13px">${nf(monthPts(m.id,nowM()))} b</span></button>`).join('');
+  }else obStep(2);
+  buildAv('ob-av','ob');buildCol('ob-col','ob');
+  const n=document.getElementById('ob-name');
+  n.oninput=()=>document.getElementById('ob-go').disabled=!n.value.trim();
 }
-function pickExistingMember(id){
-  myId=id;localStorage.setItem('ff_my_id',myId);launchApp();
-}
-async function submitOnboarding(){
+function pickMe(id){myId=id;localStorage.setItem('ff_my_id',id);launch();}
+async function createMe(){
   const name=document.getElementById('ob-name').value.trim();if(!name)return;
-  const btn=document.getElementById('ob-btn');btn.disabled=true;btn.textContent='⏳ Registruji…';
-  try{
-    const res=await sb('members',{method:'POST',prefer:'return=representation',body:JSON.stringify({name,avatar:obAv,color:obCol})});
-    const m=Array.isArray(res)?res[0]:res;myId=m.id;localStorage.setItem('ff_my_id',myId);members.push(m);launchApp();
-  }catch(e){toast('❌ '+e.message,false);btn.disabled=false;btn.textContent='Jdu do toho! 💪';}
+  const b=document.getElementById('ob-go');b.disabled=true;b.textContent='Zakládám…';
+  try{const res=await sb('members',{method:'POST',prefer:'return=representation',
+      body:JSON.stringify({name,avatar:sel.ob.a,color:sel.ob.c})});
+    const m=Array.isArray(res)?res[0]:res;members.push(m);pickMe(m.id);
+  }catch(e){toast('Nepodařilo se založit profil',true);b.disabled=false;b.textContent='Na start 🚦';}
 }
 
-// ── BOOT ────────────────────────────────────────────────
-function launchApp(){
-  document.getElementById('onboarding').classList.remove('active');
-  document.getElementById('app').classList.add('active');
-  viewMonth=nowMonth();renderBoard();
-  setInterval(async()=>{await loadAll();renderBoard();},30000);
+/* ══ BOOT ══ */
+function launch(){
+  document.getElementById('onboard').classList.remove('on');
+  document.getElementById('app').classList.add('on');
+  viewMonth=nowM();editDate=today();go('race');
+  clearInterval(pollTimer);
+  pollTimer=setInterval(async()=>{
+    if(dirty||document.hidden||tab==='log')return;
+    try{await loadAll();render();}catch(e){}
+  },45000);
 }
-async function boot(){
-  try{await loadAll();}
-  catch(e){
-    document.getElementById('loading').innerHTML=`<div style="color:#e05c5c;padding:24px;text-align:center;max-width:320px">⚠️ Nelze připojit k databázi.<br/><br/><small style="color:var(--muted)">${e.message}</small></div>`;
-    return;
-  }
+window.addEventListener('beforeunload',()=>{if(dirty)flush();});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&dirty)flush();});
+
+(async function(){
+  try{await loadAll();}catch(e){
+    document.getElementById('loading').innerHTML=
+      `<div style="padding:28px;text-align:center;max-width:320px">
+        <div class="disp" style="font-size:22px;color:var(--hot)">Data se nenačetla</div>
+        <div style="font-size:13px;color:var(--ink-2);font-weight:600;margin-top:10px">
+          Zkontroluj připojení a načti stránku znovu.</div></div>`;
+    return;}
   document.getElementById('loading').style.display='none';
-  if(myId&&members.find(m=>m.id===myId)){launchApp();}
-  else{localStorage.removeItem('ff_my_id');myId=null;document.getElementById('onboarding').classList.add('active');initOb();}
-}
-boot();
+  if(myId&&byId(myId))launch();
+  else{localStorage.removeItem('ff_my_id');myId=null;
+    document.getElementById('onboard').classList.add('on');initOb();}
+})();
 </script>
 </body>
 </html>
