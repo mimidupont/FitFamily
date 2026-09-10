@@ -347,6 +347,24 @@ button,input{font-family:inherit;color:inherit;}
 .bdg{font-size:11px;font-weight:800;padding:3px 9px;border:2px solid var(--ink);border-radius:100px;background:var(--paper);}
 .dl{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid rgba(21,21,58,.12);}
 .dl:last-child{border-bottom:none;}
+
+/* ═══ EASTER EGG — Didicorn ═══ */
+.didi{position:fixed;inset:0;z-index:400;background:rgba(21,21,58,.62);display:flex;align-items:center;justify-content:center;padding:22px;}
+.didi-card{position:relative;width:100%;max-width:360px;background:var(--paper);border:var(--bar) solid var(--ink);
+  border-radius:22px;box-shadow:6px 6px 0 var(--volt);padding:22px 20px 18px;text-align:center;overflow:hidden;
+  animation:didipop .3s cubic-bezier(.2,.9,.3,1);}
+@keyframes didipop{from{transform:scale(.85) translateY(16px);opacity:0;}}
+.didi-uni{font-size:56px;line-height:1;animation:didihop 1.4s ease-in-out infinite;}
+@keyframes didihop{0%,100%{transform:translateY(0) rotate(-5deg);}50%{transform:translateY(-9px) rotate(5deg);}}
+.didi-t{font-size:25px;margin-top:6px;}
+.didi-sub{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-top:7px;}
+.didi-m{font-size:14px;font-weight:700;color:var(--ink);line-height:1.55;margin-top:12px;}
+.didi-stats{display:flex;gap:7px;margin:16px 0 16px;}
+.didi-s{flex:1;border:2px solid var(--ink);border-radius:12px;padding:8px 3px;background:var(--ice);}
+.didi-sv{font-family:var(--mono);font-weight:800;font-size:16px;}
+.didi-sl{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);margin-top:3px;}
+.conf{position:absolute;top:-26px;font-size:15px;pointer-events:none;animation:didifall linear forwards;}
+@keyframes didifall{to{transform:translateY(520px) rotate(560deg);opacity:0;}}
 </style>
 </head>
 <body>
@@ -1053,15 +1071,71 @@ async function createMe(){
   }catch(e){toast('Nepodařilo se založit profil',true);b.disabled=false;b.textContent='Na start 🚦';}
 }
 
+/* ══ EASTER EGG — jen pro Didicorn ══ */
+const DIDI=/didi/i;                       // komu se to zobrazí
+const isDidi=m=>!!m&&DIDI.test(m.name);
+const DIDI_MSGS=[
+ s=>`Ostatní tady sbírají body. Ty sbíráš obdiv. Zvládla jsi ${s.days} ${dayWord(s.days)} pohybu a je to prostě level, na který nikdo nemá.`,
+ s=>`Oficiální výsledek nezávislé komise: nejlepší člen rodiny jsi ty. Komise byla jednomyslná. Komise jsi byla ty, ale to nikoho nezajímá.`,
+ s=>`${s.month} máš v kapse. ${nf(s.total)} bodů, ${s.days} ${dayWord(s.days)} v pohybu a nula výmluv. Legenda.`,
+ s=>`Vědci zkoumali, jak někdo zvládne ${s.days} ${dayWord(s.days)} tréninku a přitom vypadá takhle dobře. Vzdali to. Jsi nejlepší.`,
+ s=>`Gauč ti posílá stížnost, že ho zanedbáváš. My posíláme potlesk. 👏 ${nf(s.total)} bodů za ${s.month}!`,
+ s=>`Jednorožci normálně necvičí. Ty ano. Proto jsi nejlepší jednorožec široko daleko. 🦄`,
+];
+const didiSeen=()=>{try{const v=JSON.parse(localStorage.getItem('ff_didi_seen')||'[]');return Array.isArray(v)?v:[];}catch(e){return[];}};
+
+function checkDidi(){
+  const me=byId(myId);if(!isDidi(me))return;
+  const seen=didiSeen();
+  const done=monthList().filter(ym=>ym!==nowM()&&
+    logs.some(l=>l.member_id===myId&&l.date.startsWith(ym)&&ptsOf(l)>0));
+  const fresh=done.filter(ym=>!seen.includes(ym));
+  if(!fresh.length)return;
+  localStorage.setItem('ff_didi_seen',JSON.stringify([...seen,...fresh]));
+  showDidi(fresh[0]);                     // monthList() je od nejnovějšího
+}
+function showDidi(ym){
+  const me=byId(myId);
+  const ml=logs.filter(l=>l.member_id===myId&&l.date.startsWith(ym));
+  if(!ml.length)return;
+  const days=ml.filter(l=>ptsOf(l)>0).length;
+  const total=ml.reduce((s,l)=>s+ptsOf(l),0);
+  const best=ml.reduce((b,l)=>ptsOf(l)>ptsOf(b)?l:b,ml[0]);
+  const rank=[...members].sort((a,b)=>monthPts(b.id,ym)-monthPts(a.id,ym)).findIndex(m=>m.id===myId)+1;
+  const s={days,total,month:fmtM(ym),rank};
+  const msg=DIDI_MSGS[Math.floor(Math.random()*DIDI_MSGS.length)](s);
+  const conf=Array.from({length:22},()=>{
+    const e=['🦄','✨','🎉','⭐','💖','🌈'][Math.floor(Math.random()*6)];
+    return `<span class="conf" style="left:${Math.random()*100}%;animation-duration:${(1.6+Math.random()*1.4).toFixed(2)}s;animation-delay:${(Math.random()*1.2).toFixed(2)}s">${e}</span>`;
+  }).join('');
+  const el=document.createElement('div');
+  el.className='didi';
+  el.innerHTML=`<div class="didi-card">${conf}
+    <div class="didi-uni">🦄</div>
+    <div class="disp didi-t">${esc(me.name)} je nejlepší!</div>
+    <div class="didi-sub">${race(ym).veh} ${race(ym).name} · ${fmtM(ym)}</div>
+    <div class="didi-m">${msg}</div>
+    <div class="didi-stats">
+      <div class="didi-s"><div class="didi-sv">${days}</div><div class="didi-sl">Dní v pohybu</div></div>
+      <div class="didi-s"><div class="didi-sv">${nf(total)}</div><div class="didi-sl">Bodů</div></div>
+      <div class="didi-s"><div class="didi-sv">${nf(ptsOf(best))}</div><div class="didi-sl">Nejlepší den</div></div>
+    </div>
+    <button class="btn">Já vím 💅</button></div>`;
+  const close=()=>el.remove();
+  el.querySelector('.btn').onclick=close;
+  el.addEventListener('click',e=>{if(e.target===el)close();});
+  document.body.appendChild(el);
+}
+
 /* ══ BOOT ══ */
 function launch(){
   document.getElementById('onboard').classList.remove('on');
   document.getElementById('app').classList.add('on');
-  viewMonth=nowM();editDate=today();go('race');
+  viewMonth=nowM();editDate=today();go('race');setTimeout(checkDidi,700);
   clearInterval(pollTimer);
   pollTimer=setInterval(async()=>{
     if(dirty||document.hidden||tab==='log')return;
-    try{await loadAll();render();}catch(e){}
+    try{await loadAll();render();checkDidi();}catch(e){}
   },45000);
 }
 window.addEventListener('beforeunload',()=>{if(dirty)flush();});
